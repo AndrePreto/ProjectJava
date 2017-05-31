@@ -25,11 +25,6 @@ public class TextInterface {
 		}
 	}
 	
-	public static void ArrayList(){
-		ArrayList<String> Product = new ArrayList<String> ();
-		System.out.println(Arrays.toString(Product.toArray()));
-	}
-	
 	public static void menu1() {
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Listar produtos");
@@ -52,8 +47,8 @@ public class TextInterface {
 			
 	
 	public static void menu2() {
-		
-		TextInterface.ArrayList();
+		ArrayList<String> Product = new ArrayList<String> ();
+		System.out.println(Arrays.toString(Product.toArray()));
 		
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");

@@ -4,7 +4,7 @@ public class Shelf {
 	private int ShelfId;
 	private int Code;
 	private int Capacity;
-	private double Price;
+	private float Price;
 	
 	public int getShelfId() {
 		return ShelfId;
@@ -24,10 +24,10 @@ public class Shelf {
 	public void setCapacity(int capacity) {
 		Capacity = capacity;
 	}
-	public double getPrice() {
+	public float getPrice() {
 		return Price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(float price) {
 		Price = price;
 	}	
 }
