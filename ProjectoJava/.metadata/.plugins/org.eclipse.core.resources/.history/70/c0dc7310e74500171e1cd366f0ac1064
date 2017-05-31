@@ -23,6 +23,7 @@ public class TextInterface {
 				break;
 		}
 	}
+	
 		
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	

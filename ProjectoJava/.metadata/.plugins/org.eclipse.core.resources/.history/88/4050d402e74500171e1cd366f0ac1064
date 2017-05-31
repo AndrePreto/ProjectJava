@@ -23,6 +23,7 @@ public class TextInterface {
 				break;
 		}
 	}
+	
 		
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
@@ -68,5 +69,6 @@ public class TextInterface {
 		System.out.println("2) Introduza o valor do IVA do produto");
 		System.out.println("3) Introduza o preço de venda ao público do produto");
 	}
+	public static void 
 }
 
