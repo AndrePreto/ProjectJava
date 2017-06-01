@@ -1,7 +1,5 @@
 package io.altar.jseproject.model;
 
-import java.util.Scanner;
-
 public class Product {
 	private int ProductId;
 	private double Discount;
@@ -32,19 +30,5 @@ public class Product {
 	public void setPVP(double pVP) {
 		PVP = pVP;
 	}
-	
-	public Product(int ProductId, double Discount, int IVA, double PVP) {
-		this.ProductId = ProductId;
-		this.Discount = Discount;
-		this.IVA = IVA;
-		this.PVP = PVP;
-	}
-	
-	@Override
-	public String toString(){
-		return "Id: " + ProductId + ",Discount: " + Discount + ",IVA: " + IVA + ",PVP: " + PVP;             
-	}
-
+		
 }
-
-

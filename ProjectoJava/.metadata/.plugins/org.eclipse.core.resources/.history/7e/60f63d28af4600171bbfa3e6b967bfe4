@@ -1,14 +1,11 @@
 package io.altar.jseproject.textinterface;
 
 import java.util.Scanner;
-
-import io.altar.jseproject.model.Product;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TextInterface {
-
+	
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
 		int input = 0;
@@ -28,30 +25,9 @@ public class TextInterface {
 		}
 	}
 	
-	public static Integer validateInt(boolean Empty){
-		Scanner scanner = new Scanner(System.in);
-		Integer inputvalue = null;
-		String string ="";
-		
-		while(true){
-			string = scanner.nextLine();
-			inputvalue = Integer.parseInt(string);
-			if(string.isEmpty()){
-				if(Empty){
-					System.out.println("Tente Novamente");
-					return null;
-				}
-			}else{
-				return inputvalue;
-			}	
-		}
-	}
-	
-	public static double validateDouble(double input){
-		Scanner scanner = new Scanner(System.in);
-		int inputvalue = 0;
-		return inputvalue;
-		
+	public static void ArrayList(){
+		ArrayList<String> Product = new ArrayList<String> ();
+		System.out.println(Arrays.toString(Product.toArray()));
 	}
 	
 	public static void menu1() {
@@ -77,6 +53,7 @@ public class TextInterface {
 	
 	public static void menu2() {
 		
+		TextInterface.ArrayList();
 		
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");
@@ -125,21 +102,11 @@ public class TextInterface {
 	}
 	
 	public static void criarproduto(){
+		System.out.println("1) Introduza o ID do producto");
+		System.out.println("2) Introduza o valor do produto");
+		System.out.println("3) Introduza o valor do IVA do produto");
+		System.out.println("4) Introduza o preço de venda ao público do produto");
 		
-		ArrayList<Product> Products = new ArrayList<Product> ();
-
-		Product P = new Product(ProductId, Discount, IVA, PVP);
-		Products.add(P);
-		
-		System.out.println("Introduza o ID do producto");
-		Integer ProductId = validateInt(false);
-		System.out.println("Introduza o valor do produto");
-		Integer Discount = validateInt(false);
-		System.out.println("Introduza o valor do IVA do produto");
-		Integer IVA = validateInt(false);
-		System.out.println("Introduza o preço de venda ao público do produto");
-		Integer PVP = validateInt(false);
-			
 	}
 	
 	public static void editarproduto(){

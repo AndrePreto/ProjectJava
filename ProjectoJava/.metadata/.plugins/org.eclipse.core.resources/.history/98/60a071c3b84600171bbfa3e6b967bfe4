@@ -45,6 +45,7 @@ public class Product {
 		return "Id: " + ProductId + ",Discount: " + Discount + ",IVA: " + IVA + ",PVP: " + PVP;             
 	}
 
+
 }
 
 

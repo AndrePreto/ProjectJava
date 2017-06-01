@@ -29,12 +29,5 @@ public class Shelf {
 	}
 	public void setPrice(double price) {
 		Price = price;
-	}
-	public Shelf(int ShelfId, int Code, int Capacity, double Price) {
-		this.ShelfId = ShelfId;
-		this.Code = Code;
-		this.Capacity = Capacity;
-		this.Price = Price;
 	}	
-	
 }

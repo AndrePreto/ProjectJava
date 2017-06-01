@@ -128,18 +128,16 @@ public class TextInterface {
 		
 		ArrayList<Product> Products = new ArrayList<Product> ();
 
-		Product P = new Product(ProductId, Discount, IVA, PVP);
-		Products.add(P);
+		//Product P = new Product(ProductId, Discount, IVA, PVP);
+		//Products.add(P);
 		
 		System.out.println("Introduza o ID do producto");
-		Integer ProductId = validateInt(false);
+		
 		System.out.println("Introduza o valor do produto");
-		Integer Discount = validateInt(false);
 		System.out.println("Introduza o valor do IVA do produto");
-		Integer IVA = validateInt(false);
 		System.out.println("Introduza o preço de venda ao público do produto");
-		Integer PVP = validateInt(false);
-			
+		
+		
 	}
 	
 	public static void editarproduto(){

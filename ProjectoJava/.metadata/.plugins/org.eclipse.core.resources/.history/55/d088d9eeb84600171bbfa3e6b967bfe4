@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TextInterface {
-
+	
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
 		int input = 0;
@@ -28,30 +28,9 @@ public class TextInterface {
 		}
 	}
 	
-	public static Integer validateInt(boolean Empty){
-		Scanner scanner = new Scanner(System.in);
-		Integer inputvalue = null;
-		String string ="";
-		
-		while(true){
-			string = scanner.nextLine();
-			inputvalue = Integer.parseInt(string);
-			if(string.isEmpty()){
-				if(Empty){
-					System.out.println("Tente Novamente");
-					return null;
-				}
-			}else{
-				return inputvalue;
-			}	
-		}
-	}
-	
-	public static double validateDouble(double input){
-		Scanner scanner = new Scanner(System.in);
-		int inputvalue = 0;
-		return inputvalue;
-		
+	public static void ArrayList(){
+		ArrayList<String> Products = new ArrayList<String> ();
+		System.out.println(Arrays.toString(Products.toArray()));
 	}
 	
 	public static void menu1() {
@@ -127,19 +106,17 @@ public class TextInterface {
 	public static void criarproduto(){
 		
 		ArrayList<Product> Products = new ArrayList<Product> ();
-
-		Product P = new Product(ProductId, Discount, IVA, PVP);
+		
+		Product P = new Product(int ProductId, double Discount, int IVA, double PVP);
 		Products.add(P);
 		
+		
 		System.out.println("Introduza o ID do producto");
-		Integer ProductId = validateInt(false);
 		System.out.println("Introduza o valor do produto");
-		Integer Discount = validateInt(false);
 		System.out.println("Introduza o valor do IVA do produto");
-		Integer IVA = validateInt(false);
 		System.out.println("Introduza o preço de venda ao público do produto");
-		Integer PVP = validateInt(false);
-			
+		
+		
 	}
 	
 	public static void editarproduto(){
