@@ -1,48 +1,47 @@
 package io.altar.jseproject.model;
 
-import java.util.Scanner;
 
 public class Product {
-	private int ProductId;
-	private double Discount;
-	private int IVA;
-	private double PVP;
+	private int productId;
+	private double discount;
+	private int tax;
+	private double salePrice;
 	
 	public int getProductId() {
-		return ProductId;
+		return productId;
 	}
 	public void setProductId(int productId) {
-		ProductId = productId;
+		this.productId = productId;
 	}
 	public double getDiscount() {
-		return Discount;
+		return discount;
 	}
 	public void setDiscount(double discount) {
-		Discount = discount;
+		this.discount = discount;
 	}
-	public int getIVA() {
-		return IVA;
+	public int getTax() {
+		return tax;
 	}
-	public void setIVA(int iVA) {
-		IVA = iVA;
+	public void setTax(int tax) {
+		this.tax = tax;
 	}
-	public double getPVP() {
-		return PVP;
+	public double getSalePrice() {
+		return salePrice;
 	}
-	public void setPVP(double pVP) {
-		PVP = pVP;
+	public void setSalePrice(double salePrice) {
+		this.salePrice = salePrice;
 	}
 	
-	public Product(int ProductId, double Discount, int IVA, double PVP) {
-		this.ProductId = ProductId;
-		this.Discount = Discount;
-		this.IVA = IVA;
-		this.PVP = PVP;
+	public Product(int productId, double discount, int tax, double salePrice) {
+		this.productId = productId;
+		this.discount = discount;
+		this.tax = tax;
+		this.salePrice = salePrice;
 	}
 	
 	@Override
 	public String toString(){
-		return "Id: " + ProductId + ",Discount: " + Discount + ",IVA: " + IVA + ",PVP: " + PVP;             
+		return "Id: " + productId + ",Discount: " + discount + ",IVA: " + tax + ",PVP: " + salePrice;             
 	}
 
 }

@@ -28,7 +28,7 @@ public class TextInterface {
 		}
 	}
 	
-	public static Integer validateInt(boolean Empty){
+	public static int validateInt(int value){
 		Scanner scanner = new Scanner(System.in);
 		Integer inputvalue = null;
 		String string ="";
@@ -78,12 +78,12 @@ public class TextInterface {
 	public static void menu2() {
 		
 		
-		System.out.println("Por favor seleccione uma das seguintes opções:");
+		System.out.println("Por favor seleccione uma das seguintes opﾃｧﾃｵes:");
 		System.out.println("1) Criar novo produto");
 		System.out.println("2) Editar um produto existente");
 		System.out.println("3) Consultar o detalhe de um produto");
 		System.out.println("4) Remover um produto");
-		System.out.println("5) Voltar ao ecrã anterior");
+		System.out.println("5) Voltar ao ecrﾃ｣ anterior");
 		
 		int input = getInput(1,5);
 		
@@ -126,20 +126,18 @@ public class TextInterface {
 	
 	public static void criarproduto(){
 		
-		ArrayList<Product> Products = new ArrayList<Product> ();
-
-		Product P = new Product(ProductId, Discount, IVA, PVP);
-		Products.add(P);
-		
 		System.out.println("Introduza o ID do producto");
-		Integer ProductId = validateInt(false);
+		int productId = validateInt(false);
 		System.out.println("Introduza o valor do produto");
-		Integer Discount = validateInt(false);
+		double discount = validateInt(false);
 		System.out.println("Introduza o valor do IVA do produto");
-		Integer IVA = validateInt(false);
+		int tax = validateInt(false);
 		System.out.println("Introduza o preço de venda ao público do produto");
-		Integer PVP = validateInt(false);
-			
+		double salePrice = validateInt(false);
+		
+		ArrayList<Product> Products = new ArrayList<Product> ();
+		Product P = new Product (productId, discount, tax, salePrice );
+		Products.add(P);	
 	}
 	
 	public static void editarproduto(){
@@ -166,7 +164,7 @@ public class TextInterface {
 	public static void editarprateleiramenu() {
 		System.out.println("1) Introduza o código da prateleira");
 		System.out.println("2) Introduza a capacidade da prateleira");
-		System.out.println("3) Introduza o preço de aluguer da prateleira");
+		System.out.println("3) Introduza o preﾃｧo de aluguer da prateleira");
 	}
 }
 
