@@ -6,8 +6,11 @@ import io.altar.jseproject.model.Product;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class TextInterface {
+	
+	private static int productNumber = 0;
 
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
@@ -28,30 +31,42 @@ public class TextInterface {
 		}
 	}
 	
-	public static int validateInt(int value){
+	public static int validateInt(){
 		Scanner scanner = new Scanner(System.in);
-		Integer inputvalue = null;
-		String string ="";
+		int inputvalue = 0;
 		
 		while(true){
-			string = scanner.nextLine();
-			inputvalue = Integer.parseInt(string);
-			if(string.isEmpty()){
-				if(Empty){
-					System.out.println("Tente Novamente");
-					return null;
+			if(scanner.hasNextInt()){
+				inputvalue = scanner.nextInt();
+				if(inputvalue > 0){			
+					return inputvalue;
+				}else{
+				System.out.println("Por favor introduza um número positivo");
 				}
-			}else{
-				return inputvalue;
-			}	
+			}else{	
+				System.out.println("Por favor introduza um número");
+				scanner.next();
+			}
 		}
 	}
 	
-	public static double validateDouble(double input){
+	public static double validateDouble(){
 		Scanner scanner = new Scanner(System.in);
-		int inputvalue = 0;
-		return inputvalue;
+		double inputvalue = 0;
 		
+		while(true){
+			if(scanner.hasNextDouble() || scanner.hasNextInt()){
+				inputvalue = scanner.nextDouble();
+				if(inputvalue > 0){			
+					return inputvalue;
+				}else{
+				System.out.println("Por favor introduza um número positivo");
+				}
+			}else{	
+				System.out.println("Por favor introduza um número");
+				scanner.next();
+			}
+		}
 	}
 	
 	public static void menu1() {
@@ -77,13 +92,12 @@ public class TextInterface {
 	
 	public static void menu2() {
 		
-		
-		System.out.println("Por favor seleccione uma das seguintes opﾃｧﾃｵes:");
+		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");
 		System.out.println("2) Editar um produto existente");
 		System.out.println("3) Consultar o detalhe de um produto");
 		System.out.println("4) Remover um produto");
-		System.out.println("5) Voltar ao ecrﾃ｣ anterior");
+		System.out.println("5) Voltar ao ecrã anterior");
 		
 		int input = getInput(1,5);
 		
@@ -96,7 +110,9 @@ public class TextInterface {
 				break;
 			case 3:
 			case 4:
+				break;
 			case 5:
+				TextInterface.menu1();
 				break;
 		}
 	}
@@ -119,29 +135,43 @@ public class TextInterface {
 				break;
 			case 3:
 			case 4:
+				break;
 			case 5:
+				TextInterface.menu1();
 				break;
 		}
 	}
 	
 	public static void criarproduto(){
+		productNumber++;
 		
-		System.out.println("Introduza o ID do producto");
-		int productId = validateInt(false);
+		int productId = productNumber;
+		System.out.println("O producto tem o ID:" + productId);
+		
 		System.out.println("Introduza o valor do produto");
-		double discount = validateInt(false);
+		double discount = validateDouble();
 		System.out.println("Introduza o valor do IVA do produto");
-		int tax = validateInt(false);
+		int tax = validateInt();
 		System.out.println("Introduza o preço de venda ao público do produto");
-		double salePrice = validateInt(false);
-		
+		double salePrice = validateDouble();
+			
 		ArrayList<Product> Products = new ArrayList<Product> ();
-		Product P = new Product (productId, discount, tax, salePrice );
-		Products.add(P);	
+		Product P = new Product (productId, discount, tax, salePrice);
+		
+		Products.add(P);
+		
+		for (Iterator<Product> i= Products.iterator(); i.hasNext();){
+			Product item = i.next();
+			System.out.println(item);
+		}
+		System.out.println(Arrays.toString(Products.toArray()));
+
+		
+		TextInterface.menu1();
 	}
 	
 	public static void editarproduto(){
-		System.out.println("1) Introduza o ID do producto");
+		System.out.println("1) Introduza o ID do producto que deseja editar");
 	}
 	
 	public static void editarprodutomenu() {
