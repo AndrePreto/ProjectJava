@@ -1,7 +1,13 @@
 package io.altar.jseproject.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+
 
 public class Product {
+	
 	private int productId;
 	private double discount;
 	private int tax;
@@ -32,16 +38,39 @@ public class Product {
 		this.salePrice = salePrice;
 	}
 	
+	//Com arrayList
+	//public static ArrayList<Product> Products = new ArrayList<Product> ();
+	
+	//Com HashMap
+	public static LinkedHashMap<Integer, Product> Products = new LinkedHashMap<Integer, Product>();
+	
+	public static void ProductList(){
+		
+		if(Products.isEmpty()){
+			System.out.println("Não existe nenhum produto em stock");
+		}else{
+			System.out.println("Tem os seguintes productos em Stock:");
+			
+			for (Entry<Integer, Product> entry : Products.entrySet()) {
+				System.out.println(entry.getValue());
+			
+			//Com arrayList
+			//System.out.println(Arrays.toString(Products.toArray()));
+			}
+		}
+	}
+	
 	public Product(int productId, double discount, int tax, double salePrice) {
 		this.productId = productId;
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
+		Products.put(productId,this);
 	}
 	
 	@Override
 	public String toString(){
-		return "Id: " + productId + ",Discount: " + discount + ",IVA: " + tax + ",PVP: " + salePrice;             
+		return "|Id: " + productId + "|Disconto: " + discount + "|IVA: " + tax + "|Preço de Venda: " + salePrice + "|";             
 	}
 
 }

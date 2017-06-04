@@ -3,14 +3,13 @@ package io.altar.jseproject.textinterface;
 import java.util.Scanner;
 
 import io.altar.jseproject.model.Product;
-
-import java.util.ArrayList;
+import io.altar.jseproject.model.Shelf;
 import java.util.Arrays;
-import java.util.Iterator;
+import java.util.ArrayList;
+
 
 public class TextInterface {
 	
-	private static int productNumber = 0;
 
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
@@ -92,6 +91,8 @@ public class TextInterface {
 	
 	public static void menu2() {
 		
+		Product.ProductList();
+		
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");
 		System.out.println("2) Editar um produto existente");
@@ -118,6 +119,9 @@ public class TextInterface {
 	}
 	
 	public static void menu3() {
+		
+		Shelf.ShelfList();
+		
 		System.out.println("1) Criar nova Prateleira");
 		System.out.println("2) Editar uma prateleira existente");
 		System.out.println("3) Consultar o detalhe de uma prateleira");
@@ -142,6 +146,8 @@ public class TextInterface {
 		}
 	}
 	
+	private static int productNumber = 0;
+	
 	public static void criarproduto(){
 		productNumber++;
 		
@@ -154,18 +160,8 @@ public class TextInterface {
 		int tax = validateInt();
 		System.out.println("Introduza o preço de venda ao público do produto");
 		double salePrice = validateDouble();
-			
-		ArrayList<Product> Products = new ArrayList<Product> ();
-		Product P = new Product (productId, discount, tax, salePrice);
 		
-		Products.add(P);
-		
-		for (Iterator<Product> i= Products.iterator(); i.hasNext();){
-			Product item = i.next();
-			System.out.println(item);
-		}
-		System.out.println(Arrays.toString(Products.toArray()));
-
+		new Product (productId, discount, tax, salePrice);
 		
 		TextInterface.menu1();
 	}
@@ -180,11 +176,25 @@ public class TextInterface {
 		System.out.println("3) Introduza o preço de venda ao público do produto");
 	}
 	
+	public static int ShelfNumber=0;
+	
 	public static void criarprateleira(){
-		System.out.println("1) Introduza o ID da prateleira");
-		System.out.println("2) Introduza o código da prateleira");
-		System.out.println("3) Introduza a capacidade da prateleira");
-		System.out.println("4) Introduza o preço de aluguer da prateleira");
+		
+		ShelfNumber++;
+		
+		int shelfId = ShelfNumber;
+		System.out.println("A prateleira tem o ID:" + shelfId);
+		
+		System.out.println("Introduza o código da prateleira");
+		int code = validateInt();
+		System.out.println("Introduza a capacidade da prateleira");
+		int capacity = validateInt();
+		System.out.println("Introduza o preço de aluguer da prateleira");
+		int price = validateInt();
+		
+		new Shelf (shelfId, code, capacity, price);
+		
+		TextInterface.menu1();
 	}
 	
 	public static void editarprateleira(){

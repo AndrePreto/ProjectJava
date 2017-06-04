@@ -1,40 +1,68 @@
 package io.altar.jseproject.model;
 
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+
 public class Shelf {
-	private int ShelfId;
-	private int Code;
-	private int Capacity;
-	private double Price;
+	private int shelfId;
+	private int code;
+	private int capacity;
+	private double price;
 	
 	public int getShelfId() {
-		return ShelfId;
+		return shelfId;
 	}
 	public void setShelfId(int shelfId) {
-		ShelfId = shelfId;
+		this.shelfId = shelfId;
 	}
 	public int getCode() {
-		return Code;
+		return code;
 	}
 	public void setCode(int code) {
-		Code = code;
+		this.code = code;
 	}
 	public int getCapacity() {
-		return Capacity;
+		return capacity;
 	}
 	public void setCapacity(int capacity) {
-		Capacity = capacity;
+		this.capacity = capacity;
 	}
 	public double getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(double price) {
-		Price = price;
+		this.price = price;
 	}
-	public Shelf(int ShelfId, int Code, int Capacity, double Price) {
-		this.ShelfId = ShelfId;
-		this.Code = Code;
-		this.Capacity = Capacity;
-		this.Price = Price;
+	
+	public static LinkedHashMap<Integer, Shelf> Shelfs = new LinkedHashMap<Integer, Shelf>();
+	
+	public static void ShelfList(){
+		
+		if(Shelfs.isEmpty()){
+			System.out.println("Não existe nenhuma prateleira de momento");
+		}else{
+			System.out.println("Tem as seguintes prateleiras");
+			
+			for (Entry<Integer, Shelf> entry : Shelfs.entrySet()) {
+				System.out.println(entry.getValue());
+			
+			//Com arrayList
+			//System.out.println(Arrays.toString(Products.toArray()));
+			}
+		}
+	}
+	
+	
+	public Shelf(int shelfId, int code, int capacity, double price) {
+		this.shelfId = shelfId;
+		this.code = code;
+		this.capacity = capacity;
+		this.price = price;
+		Shelfs.put(shelfId, this);
 	}	
 	
+	@Override
+	public String toString(){
+		return "|Id: " + shelfId + "|Código: " + code + "|Capacidade: " + capacity + "|Preço: " + price + "|";             
+	}
 }

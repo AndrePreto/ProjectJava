@@ -23,6 +23,25 @@
 <entry path="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\Users\Andre\Desktop\eclipse\jre" version="1.8.0_131">
+<bootpath>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\resources.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\rt.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\jce.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\jfr.jar"/>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="C:\Users\Andre\Desktop\eclipse" version="1.8.0_131">
 <bootpath>
 <entry path="C:\Users\Andre\Desktop\eclipse\jre\lib\resources.jar"/>
