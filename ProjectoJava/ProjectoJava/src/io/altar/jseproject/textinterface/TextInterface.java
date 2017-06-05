@@ -1,18 +1,23 @@
 package io.altar.jseproject.textinterface;
 
 import java.util.Scanner;
+import java.util.Collections;
 
 import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
 import io.altar.jseproject.repository.ShelfRepository;
 import io.altar.jseproject.repository.ProductRepository;
-import java.util.Arrays;
-import java.util.ArrayList;
+import io.altar.jseproject.repository.EntityRepository;
+
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
 
 
 public class TextInterface {
 	
-
+	public static ProductRepository ProductList = ProductRepository.getInstance();
+	public static ShelfRepository ShelfList = ShelfRepository.getInstance();
+	
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
 		int input = 0;
@@ -93,7 +98,17 @@ public class TextInterface {
 	
 	public static void menu2() {
 		
-		ProductRepository.ProductList();
+		/*
+		if(ProductList.isEmpty()){
+			System.out.println("Não existe nenhum produto em stock");
+		}else{
+			System.out.println("Tem os seguintes productos em Stock:");
+			
+			for (Entry<Integer, Product> entry : ProductList.entrySet()) {
+				System.out.println(entry.getValue());
+			}
+		}
+		*/	
 		
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");
@@ -122,7 +137,7 @@ public class TextInterface {
 	
 	public static void menu3() {
 		
-		ShelfRepository.ShelfList();
+		//ShelfRepository.ShelfList();
 		
 		System.out.println("1) Criar nova Prateleira");
 		System.out.println("2) Editar uma prateleira existente");
@@ -148,12 +163,10 @@ public class TextInterface {
 		}
 	}
 	
-	private static int productNumber = 0;
 	
 	public static void criarproduto(){
-		productNumber++;
 		
-		int Id = productNumber;
+		int Id = ProductRepository.NextId();
 		System.out.println("O producto tem o ID:" + Id);
 		
 		System.out.println("Introduza o valor do produto");
@@ -163,7 +176,7 @@ public class TextInterface {
 		System.out.println("Introduza o preço de venda ao público do produto");
 		double salePrice = validateDouble();
 		
-		new Product (Id, discount, tax, salePrice);
+		new Product (discount, tax, salePrice);
 		
 		TextInterface.menu1();
 	}
@@ -178,13 +191,11 @@ public class TextInterface {
 		System.out.println("3) Introduza o preço de venda ao público do produto");
 	}
 	
-	public static int ShelfNumber=0;
 	
 	public static void criarprateleira(){
 		
-		ShelfNumber++;
 		
-		int Id = ShelfNumber;
+		int Id = EntityRepository.NextId();
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");
@@ -194,7 +205,7 @@ public class TextInterface {
 		System.out.println("Introduza o preço de aluguer da prateleira");
 		int price = validateInt();
 		
-		new Shelf (Id, code, capacity, price);
+		new Shelf (code, capacity, price);
 		
 		TextInterface.menu1();
 	}

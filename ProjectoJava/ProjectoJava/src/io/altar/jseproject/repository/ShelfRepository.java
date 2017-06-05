@@ -1,12 +1,18 @@
 package io.altar.jseproject.repository;
 
-import java.util.LinkedHashMap;
-import java.util.Map.Entry;
-
 import io.altar.jseproject.model.Shelf;
 
-public class ShelfRepository {
+public class ShelfRepository extends EntityRepository <Shelf> {
 	
+	private static final ShelfRepository INSTANCE = new ShelfRepository();
+	
+	private ShelfRepository(){}
+	
+	public static ShelfRepository getInstance(){
+		return INSTANCE;
+	}
+	
+	/*
 	//Com arrayList
 	//public static ArrayList<Shelf> Shelfs = new ArrayList<Shelf> ();
 	
@@ -27,4 +33,5 @@ public class ShelfRepository {
 			}
 		}
 	}
+	*/
 }
