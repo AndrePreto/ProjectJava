@@ -2,18 +2,19 @@ package io.altar.jseproject.model;
 
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
+import io.altar.jseproject.repository.ShelfRepository;
 
 public class Shelf {
-	private int shelfId;
+	private int Id;
 	private int code;
 	private int capacity;
 	private double price;
 	
-	public int getShelfId() {
-		return shelfId;
+	public int getId() {
+		return Id;
 	}
-	public void setShelfId(int shelfId) {
-		this.shelfId = shelfId;
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 	public int getCode() {
 		return code;
@@ -34,35 +35,16 @@ public class Shelf {
 		this.price = price;
 	}
 	
-	public static LinkedHashMap<Integer, Shelf> Shelfs = new LinkedHashMap<Integer, Shelf>();
-	
-	public static void ShelfList(){
-		
-		if(Shelfs.isEmpty()){
-			System.out.println("Não existe nenhuma prateleira de momento");
-		}else{
-			System.out.println("Tem as seguintes prateleiras");
-			
-			for (Entry<Integer, Shelf> entry : Shelfs.entrySet()) {
-				System.out.println(entry.getValue());
-			
-			//Com arrayList
-			//System.out.println(Arrays.toString(Products.toArray()));
-			}
-		}
-	}
-	
-	
 	public Shelf(int shelfId, int code, int capacity, double price) {
-		this.shelfId = shelfId;
+		this.Id = shelfId;
 		this.code = code;
 		this.capacity = capacity;
 		this.price = price;
-		Shelfs.put(shelfId, this);
+		//ShelfRepository.Shelfs.put(shelfId, this);
 	}	
 	
 	@Override
 	public String toString(){
-		return "|Id: " + shelfId + "|Código: " + code + "|Capacidade: " + capacity + "|Preço: " + price + "|";             
+		return "|Id: " + Id + "|Código: " + code + "|Capacidade: " + capacity + "|Preço: " + price + "|";             
 	}
 }

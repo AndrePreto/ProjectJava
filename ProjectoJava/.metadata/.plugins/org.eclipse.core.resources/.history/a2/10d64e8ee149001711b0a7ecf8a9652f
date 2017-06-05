@@ -1,0 +1,13 @@
+package io.altar.jseproject.repository;
+
+import java.util.Collections;
+
+public abstract class EntityRepository<E extends Entity> {
+	private Map<Long, E> entities = newHashMap<>;
+	
+	private static int index = 0;
+	
+	protected int getNextid(){
+		return index++;
+	}
+}

@@ -1,0 +1,17 @@
+package io.altar.jseproject.repository;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+
+import io.altar.jseproject.model.Product;
+import io.altar.jseproject.model.Entity;
+
+public abstract class EntityRepository<E extends Entity> {
+	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<Integer, E>();
+	
+	private static int index = 0;
+	
+	protected int getNextid(){
+		return index++;
+	}
+}
