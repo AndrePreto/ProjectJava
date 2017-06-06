@@ -39,7 +39,7 @@ public class Shelf extends Entity{
 		this.code = code;
 		this.capacity = capacity;
 		this.price = price;
-		ShelfRepository.getInstance().PutOnListShelf(this);
+		ShelfRepository.getInstance().PutOnList(this);
 		//ShelfRepository.Shelfs.put(shelfId, this);
 	}	
 	

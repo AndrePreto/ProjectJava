@@ -195,7 +195,7 @@ public class TextInterface {
 	public static void criarprateleira(){
 		
 		
-		int Id = ShelfRepository.shelfNextId();
+		int Id = ShelfRepository.NextId();
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");

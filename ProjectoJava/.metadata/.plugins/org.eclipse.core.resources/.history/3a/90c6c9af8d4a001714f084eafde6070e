@@ -35,11 +35,11 @@ public class Product extends Entity{
 		this.salePrice = salePrice;
 	}
 
-	public Product(double discount, int tax, double salePrice) {
+	private Product(double discount, int tax, double salePrice) {
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
-		ProductRepository.getInstance().PutOnListProduct(this);
+		ProductRepository.getInstance().PutOnList(this);
 		//EntityRepository.entities.put(Id,this);
 	}
 	

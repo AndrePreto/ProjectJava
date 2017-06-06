@@ -8,14 +8,25 @@ public abstract class EntityRepository <E extends Entity> {
 	
 	private LinkedHashMap <Integer, Entity> Entities = new LinkedHashMap <Integer, Entity> ();
 	
-	private static int Id = 0;
+	private static int productId = 0;
 	
-	public static int NextId(){
-		return ++Id;
+	public static int productNextId(){
+		return ++productId;
 	}
 		
-	public void PutOnList(Entity Entity){
-		Entity.setId(Id);
+	public void PutOnListProduct(Entity Entity){
+		Entity.setId(productId);
+		Entities.put(Entity.getId(), Entity);
+	}
+	
+	private static int shelfId = 0;
+	
+	public static int shelfNextId(){
+		return ++shelfId;
+	}
+		
+	public void PutOnListShelf(Entity Entity){
+		Entity.setId(shelfId);
 		Entities.put(Entity.getId(), Entity);
 	}
 	

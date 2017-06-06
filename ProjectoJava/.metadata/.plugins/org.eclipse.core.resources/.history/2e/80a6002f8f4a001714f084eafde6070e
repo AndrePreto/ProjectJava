@@ -39,7 +39,7 @@ public class Product extends Entity{
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
-		ProductRepository.getInstance().PutOnListProduct(this);
+		ProductRepository.getInstance().PutOnList(this);
 		//EntityRepository.entities.put(Id,this);
 	}
 	

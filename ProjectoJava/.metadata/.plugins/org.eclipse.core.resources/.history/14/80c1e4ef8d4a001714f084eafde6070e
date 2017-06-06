@@ -166,7 +166,7 @@ public class TextInterface {
 	
 	public static void criarproduto(){
 		
-		int Id = ProductRepository.productNextId();
+		int Id = ProductRepository.NextId();
 		System.out.println("O producto tem o ID:" + Id);
 		
 		System.out.println("Introduza o valor do produto");
@@ -195,7 +195,7 @@ public class TextInterface {
 	public static void criarprateleira(){
 		
 		
-		int Id = ShelfRepository.shelfNextId();
+		int Id = EntityRepository.NextId();
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");
