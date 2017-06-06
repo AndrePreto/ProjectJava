@@ -15,8 +15,9 @@ import java.util.Map.Entry;
 
 public class TextInterface {
 	
-	public static ProductRepository ProductList = ProductRepository.getInstance();
-	public static ShelfRepository ShelfList = ShelfRepository.getInstance();
+	private static ProductRepository ProductList = ProductRepository.getInstance();
+	
+	private static ShelfRepository ShelfList = ShelfRepository.getInstance();
 	
 	public static int getInput(int min, int max){
 		Scanner scanner = new Scanner(System.in);	
@@ -75,6 +76,30 @@ public class TextInterface {
 		}
 	}
 	
+	public static int validateIVA(){
+		Scanner scanner = new Scanner(System.in);
+		int inputvalue = 0;
+		
+		while(true){
+			if(scanner.hasNextInt()){
+				inputvalue = scanner.nextInt();
+				switch (inputvalue){
+					case 6:
+					case 13:
+					case 21:
+					case 23:
+						return inputvalue;
+					default:
+						System.out.println("Por favor introduza um valor de IVA válido (6,13,21 ou 23)");
+				}
+			}else{
+				System.out.println("Por favor introduza um número");
+				scanner.next();
+			}
+		}
+		
+	}
+	
 	public static void menu1() {
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Listar produtos");
@@ -98,17 +123,18 @@ public class TextInterface {
 	
 	public static void menu2() {
 		
-		/*
+		
 		if(ProductList.isEmpty()){
-			System.out.println("Não existe nenhum produto em stock");
+			System.out.println("------------------------------------");
+			System.out.println("|Não existe nenhum produto em stock|");
+			System.out.println("------------------------------------");
 		}else{
 			System.out.println("Tem os seguintes productos em Stock:");
 			
-			for (Entry<Integer, Product> entry : ProductList.entrySet()) {
-				System.out.println(entry.getValue());
+			for (Integer key : ProductList.keySet()) {
+				System.out.println(ProductList.get(key));
 			}
 		}
-		*/	
 		
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Criar novo produto");
@@ -137,7 +163,17 @@ public class TextInterface {
 	
 	public static void menu3() {
 		
-		//ShelfRepository.ShelfList();
+		if(ShelfList.isEmpty()){
+			System.out.println("-------------------------------");
+			System.out.println("|Não existe nenhuma prateleira|");
+			System.out.println("-------------------------------");
+		}else{
+			System.out.println("Tem as seguintes prateleiras:");
+			
+			for (Integer key : ShelfList.keySet()) {
+				System.out.println(ShelfList.get(key));
+			}
+		}
 		
 		System.out.println("1) Criar nova Prateleira");
 		System.out.println("2) Editar uma prateleira existente");
@@ -166,13 +202,13 @@ public class TextInterface {
 	
 	public static void criarproduto(){
 		
-		int Id = ProductRepository.NextId();
+		int Id = ProductRepository.productNextId();
 		System.out.println("O producto tem o ID:" + Id);
 		
 		System.out.println("Introduza o valor do produto");
 		double discount = validateDouble();
 		System.out.println("Introduza o valor do IVA do produto");
-		int tax = validateInt();
+		int tax = validateIVA();
 		System.out.println("Introduza o preço de venda ao público do produto");
 		double salePrice = validateDouble();
 		
@@ -182,20 +218,19 @@ public class TextInterface {
 	}
 	
 	public static void editarproduto(){
-		System.out.println("1) Introduza o ID do producto que deseja editar");
-	}
-	
-	public static void editarprodutomenu() {
-		System.out.println("1) Introduza o valor do produto");
-		System.out.println("2) Introduza o valor do IVA do produto");
-		System.out.println("3) Introduza o preço de venda ao público do produto");
+		System.out.println("Introduza o ID do producto que deseja editar");
+		
+		
+		System.out.println("Introduza o novo valor do produto");
+		System.out.println("Introduza o novo IVA do produto");
+		System.out.println("Introduza o novo preço de venda ao público do produto");
 	}
 	
 	
 	public static void criarprateleira(){
 		
 		
-		int Id = EntityRepository.NextId();
+		int Id = EntityRepository.shelfNextId();
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");

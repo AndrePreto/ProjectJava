@@ -1,0 +1,16 @@
+package io.altar.jseproject.model;
+
+public class Entity{
+	
+	private int Id;
+	
+	public int getid() {
+		return Id;
+	}
+	
+	public void setid(int Id) {
+		this.Id = Id;
+	}
+	
+	public Entity() {}
+}

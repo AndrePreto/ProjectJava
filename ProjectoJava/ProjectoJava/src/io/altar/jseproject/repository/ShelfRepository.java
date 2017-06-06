@@ -12,6 +12,8 @@ public class ShelfRepository extends EntityRepository <Shelf> {
 		return INSTANCE;
 	}
 	
+	
+	
 	/*
 	//Com arrayList
 	//public static ArrayList<Shelf> Shelfs = new ArrayList<Shelf> ();

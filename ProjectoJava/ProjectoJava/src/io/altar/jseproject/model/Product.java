@@ -39,13 +39,13 @@ public class Product extends Entity{
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
-		ProductRepository.getInstance().PutOnList(this);
+		ProductRepository.getInstance().PutOnListProduct(this);
 		//EntityRepository.entities.put(Id,this);
 	}
 	
 	@Override
 	public String toString(){
-		return "|Id: " + getId() + "|Disconto: " + discount + "|IVA: " + tax + "|Preço de Venda: " + salePrice + "|";             
+		return "|Id: " + getId() + "|Disconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|";             
 	}
 
 }
