@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="io.altar.jseproject.textinterface.TextInterface"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="io.altar.jseproject.model.Entity"/>
 </qualifiedTypeNameHistroy>
