@@ -73,7 +73,9 @@ public class TextInterface {
 				TextInterface.editarproduto();
 				break;
 			case 3:
+				break;
 			case 4:
+				TextInterface.eliminarproduto();
 				break;
 			case 5:
 				TextInterface.menu1();
@@ -111,7 +113,7 @@ public class TextInterface {
 				TextInterface.editarprateleira();
 				break;
 			case 3:
-			case 4:
+			case 4:	
 				break;
 			case 5:
 				TextInterface.menu1();
@@ -125,7 +127,7 @@ public class TextInterface {
 		int Id = ProductRepository.productNextId();
 		System.out.println("O producto tem o ID:" + Id);
 		
-		System.out.println("Introduza o valor do produto");
+		System.out.println("Introduza o disconto do produto");
 		double discount = Utils.validateDouble();
 		System.out.println("Introduza o valor do IVA do produto");
 		int tax = Utils.validateIVA();
@@ -138,22 +140,61 @@ public class TextInterface {
 	}
 	
 	public static void editarproduto(){
+		Scanner scanner = new Scanner(System.in);
+		
 		System.out.println("Introduza o ID do producto que deseja editar");
-		int Id = Utils.validateInt();
-			if(ProductList.ProductcontainsKey()){
-			
-				System.out.println("Introduza o novo valor do produto");
-				double discount = Utils.validateDouble();
-				System.out.println("Introduza o novo IVA do produto");
-				int tax = Utils.validateIVA();
-				System.out.println("Introduza o novo preço de venda ao público do produto");
-				double salePrice = Utils.validateDouble();
-				
-				
-				ProductRepository.editProduct(Id, discount, tax, salePrice);
+		while(true){
+			if(!ProductList.isEmpty()){
+				int Id = Utils.validateInt();
+				if(Id==0){
+					TextInterface.menu2();
+				}else if(ProductList.ProductcontainsKey(Id)){
+					
+					System.out.println("O produto que deseja alterar tem a seguinte informação:" + ProductList.get(Id));
+					
+					System.out.println("Introduza o novo disconto do produto");
+					double discount = Utils.validateDouble();
+					System.out.println("Introduza o novo IVA do produto");
+					int tax = Utils.validateIVA();
+					System.out.println("Introduza o novo preço de venda ao público do produto");
+					double salePrice = Utils.validateDouble();
+					
+					ProductRepository.editProduct(Id, discount, tax, salePrice);
+					TextInterface.menu1(); 
+						
+				}else{
+					System.out.println("O Id do produto que inseriu não é válido. Insira o Id de um produto já existente");
+				}
 			}else{
-				System.out.println("Insira o Id de um produto já existente");
-			}
+				System.out.println("Não existe qualquer produto em stock para editar");
+				
+				TextInterface.menu1();
+			}	
+		}
+	}
+	
+	public static void eliminarproduto(){
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Introduza o ID do producto que deseja eliminar");
+		while(true){
+			if(!ProductList.isEmpty()){
+				int Id = Utils.validateInt();
+				if(Id==0){
+					TextInterface.menu2();
+				}else if(ProductList.ProductcontainsKey(Id)){
+					
+						//Colocarcenas
+						
+				}else{
+					System.out.println("O Id do produto que inseriu não é válido. Insira o Id de um produto já existente");
+				}
+			}else{
+				System.out.println("Não existe qualquer produto em stock para eliminar");
+				
+				TextInterface.menu1();
+			}	
+		}
 	}
 	
 	

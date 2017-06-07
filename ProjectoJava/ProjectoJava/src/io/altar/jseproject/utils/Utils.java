@@ -19,7 +19,7 @@ public class Utils {
 				System.out.println("Seleccione um valor numérico entre " + min + " e" + max);
 				}
 			} else {
-				System.out.println("Seleccione um valor numérico entre " + min + "e" + max);
+				System.out.println("Seleccione um valor numérico entre " + min + " e" + max);
 				scanner.next();
 			}
 		}
@@ -32,7 +32,7 @@ public class Utils {
 		while(true){
 			if(scanner.hasNextInt()){
 				inputvalue = scanner.nextInt();
-				if(inputvalue > 0){			
+				if(inputvalue >= 0){			
 					return inputvalue;
 				}else{
 				System.out.println("Por favor introduza um número positivo");
@@ -51,7 +51,7 @@ public class Utils {
 		while(true){
 			if(scanner.hasNextDouble() || scanner.hasNextInt()){
 				inputvalue = scanner.nextDouble();
-				if(inputvalue > 0){			
+				if(inputvalue >= 0){			
 					return inputvalue;
 				}else{
 				System.out.println("Por favor introduza um número positivo");

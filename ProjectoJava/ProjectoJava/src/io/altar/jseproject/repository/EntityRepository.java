@@ -4,6 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Set;
 
 import io.altar.jseproject.model.Entity;
+import io.altar.jseproject.model.Product;
+
 
 public abstract class EntityRepository <E extends Entity> {
 	
@@ -42,11 +44,11 @@ public abstract class EntityRepository <E extends Entity> {
 		return Entities.isEmpty();
 	}
 	
-	public boolean ProductcontainsKey(){
-		return Entities.containsKey(productId);
+	public boolean ProductcontainsKey(int Id){
+		return Entities.containsKey(Id);
 	}
 	
-	public boolean ShelfcontainsKey(){
-		return Entities.containsKey(shelfId);
+	public boolean ShelfcontainsKey(int Id){
+		return Entities.containsKey(Id);
 	}
 }
