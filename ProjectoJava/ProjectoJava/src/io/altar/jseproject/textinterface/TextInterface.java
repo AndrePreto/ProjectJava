@@ -6,6 +6,7 @@ import java.util.Collections;
 import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
 import io.altar.jseproject.repository.ShelfRepository;
+import io.altar.jseproject.utils.Utils;
 import io.altar.jseproject.repository.ProductRepository;
 import io.altar.jseproject.repository.EntityRepository;
 
@@ -19,94 +20,13 @@ public class TextInterface {
 	
 	private static ShelfRepository ShelfList = ShelfRepository.getInstance();
 	
-	public static int getInput(int min, int max){
-		Scanner scanner = new Scanner(System.in);	
-		int input = 0;
-		
-		while (true){
-			if(scanner.hasNextInt()){
-				input = scanner.nextInt();
-				if (input >= min && input <= max){
-					return input;
-				} else {
-				System.out.println("Seleccione um valor numérico entre " + min + " e" + max);
-				}
-			} else {
-				System.out.println("Seleccione um valor numérico entre " + min + "e" + max);
-				scanner.next();
-			}
-		}
-	}
-	
-	public static int validateInt(){
-		Scanner scanner = new Scanner(System.in);
-		int inputvalue = 0;
-		
-		while(true){
-			if(scanner.hasNextInt()){
-				inputvalue = scanner.nextInt();
-				if(inputvalue > 0){			
-					return inputvalue;
-				}else{
-				System.out.println("Por favor introduza um número positivo");
-				}
-			}else{	
-				System.out.println("Por favor introduza um número");
-				scanner.next();
-			}
-		}
-	}
-	
-	public static double validateDouble(){
-		Scanner scanner = new Scanner(System.in);
-		double inputvalue = 0;
-		
-		while(true){
-			if(scanner.hasNextDouble() || scanner.hasNextInt()){
-				inputvalue = scanner.nextDouble();
-				if(inputvalue > 0){			
-					return inputvalue;
-				}else{
-				System.out.println("Por favor introduza um número positivo");
-				}
-			}else{	
-				System.out.println("Por favor introduza um número");
-				scanner.next();
-			}
-		}
-	}
-	
-	public static int validateIVA(){
-		Scanner scanner = new Scanner(System.in);
-		int inputvalue = 0;
-		
-		while(true){
-			if(scanner.hasNextInt()){
-				inputvalue = scanner.nextInt();
-				switch (inputvalue){
-					case 6:
-					case 13:
-					case 21:
-					case 23:
-						return inputvalue;
-					default:
-						System.out.println("Por favor introduza um valor de IVA válido (6,13,21 ou 23)");
-				}
-			}else{
-				System.out.println("Por favor introduza um número");
-				scanner.next();
-			}
-		}
-		
-	}
-	
 	public static void menu1() {
 		System.out.println("Por favor seleccione uma das seguintes opções:");
 		System.out.println("1) Listar produtos");
 		System.out.println("2) Listar prateleiras");
 		System.out.println("3) Sair ");
 		
-		int input = getInput(1,3);
+		int input = Utils.getInput(1,3);
 		
 		switch (input){
 			case 1:
@@ -143,7 +63,7 @@ public class TextInterface {
 		System.out.println("4) Remover um produto");
 		System.out.println("5) Voltar ao ecrã anterior");
 		
-		int input = getInput(1,5);
+		int input = Utils.getInput(1,5);
 		
 		switch (input){
 			case 1:
@@ -173,7 +93,7 @@ public class TextInterface {
 			for (Integer key : ShelfList.keySet()) {
 				System.out.println(ShelfList.get(key));
 			}
-		}
+		} 
 		
 		System.out.println("1) Criar nova Prateleira");
 		System.out.println("2) Editar uma prateleira existente");
@@ -181,7 +101,7 @@ public class TextInterface {
 		System.out.println("4) Remover uma prateleira");
 		System.out.println("5) Voltar ao ecrã anterior");
 		
-		int input = getInput(1,5);
+		int input = Utils.getInput(1,5);
 		
 		switch (input){
 			case 1:
@@ -206,11 +126,11 @@ public class TextInterface {
 		System.out.println("O producto tem o ID:" + Id);
 		
 		System.out.println("Introduza o valor do produto");
-		double discount = validateDouble();
+		double discount = Utils.validateDouble();
 		System.out.println("Introduza o valor do IVA do produto");
-		int tax = validateIVA();
+		int tax = Utils.validateIVA();
 		System.out.println("Introduza o preço de venda ao público do produto");
-		double salePrice = validateDouble();
+		double salePrice = Utils.validateDouble();
 		
 		new Product (discount, tax, salePrice);
 		
@@ -219,11 +139,21 @@ public class TextInterface {
 	
 	public static void editarproduto(){
 		System.out.println("Introduza o ID do producto que deseja editar");
-		
-		
-		System.out.println("Introduza o novo valor do produto");
-		System.out.println("Introduza o novo IVA do produto");
-		System.out.println("Introduza o novo preço de venda ao público do produto");
+		int Id = Utils.validateInt();
+			if(ProductList.ProductcontainsKey()){
+			
+				System.out.println("Introduza o novo valor do produto");
+				double discount = Utils.validateDouble();
+				System.out.println("Introduza o novo IVA do produto");
+				int tax = Utils.validateIVA();
+				System.out.println("Introduza o novo preço de venda ao público do produto");
+				double salePrice = Utils.validateDouble();
+				
+				
+				ProductRepository.editProduct(Id, discount, tax, salePrice);
+			}else{
+				System.out.println("Insira o Id de um produto já existente");
+			}
 	}
 	
 	
@@ -234,11 +164,11 @@ public class TextInterface {
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");
-		int code = validateInt();
+		int code = Utils.validateInt();
 		System.out.println("Introduza a capacidade da prateleira");
-		int capacity = validateInt();
+		int capacity = Utils.validateInt();
 		System.out.println("Introduza o preço de aluguer da prateleira");
-		int price = validateInt();
+		int price = Utils.validateInt();
 		
 		new Shelf (code, capacity, price);
 		

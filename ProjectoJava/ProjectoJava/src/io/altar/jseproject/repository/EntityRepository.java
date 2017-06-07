@@ -41,4 +41,12 @@ public abstract class EntityRepository <E extends Entity> {
 	public boolean isEmpty(){
 		return Entities.isEmpty();
 	}
+	
+	public boolean ProductcontainsKey(){
+		return Entities.containsKey(productId);
+	}
+	
+	public boolean ShelfcontainsKey(){
+		return Entities.containsKey(shelfId);
+	}
 }
