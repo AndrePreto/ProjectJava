@@ -1,0 +1,39 @@
+package io.altar.jseproject.repository;
+
+import io.altar.jseproject.model.Shelf;
+
+public class ShelfRepository extends EntityRepository <Shelf> {
+	
+	private static final ShelfRepository INSTANCE = new ShelfRepository();
+	
+	private ShelfRepository(){}
+	
+	public static ShelfRepository getInstance(){
+		return INSTANCE;
+	}
+	
+	
+	
+	/*
+	//Com arrayList
+	//public static ArrayList<Shelf> Shelfs = new ArrayList<Shelf> ();
+	
+	public static LinkedHashMap<Integer, Shelf> Shelfs = new LinkedHashMap<Integer, Shelf>();
+	
+	public static void ShelfList(){
+		
+		if(Shelfs.isEmpty()){
+			System.out.println("Não existe nenhuma prateleira de momento");
+		}else{
+			System.out.println("Tem as seguintes prateleiras");
+			
+			for (Entry<Integer, Shelf> entry : Shelfs.entrySet()) {
+				System.out.println(entry.getValue());
+			
+			//Com arrayList
+			//System.out.println(Arrays.toString(Products.toArray()));
+			}
+		}
+	}
+	*/
+}

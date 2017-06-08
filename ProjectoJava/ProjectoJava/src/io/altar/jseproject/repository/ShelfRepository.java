@@ -1,5 +1,6 @@
 package io.altar.jseproject.repository;
 
+import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
 
 public class ShelfRepository extends EntityRepository <Shelf> {
@@ -12,7 +13,12 @@ public class ShelfRepository extends EntityRepository <Shelf> {
 		return INSTANCE;
 	}
 	
-	
+	public static void editShelf (int Id, int code, int capacity, double price){
+		
+		((Shelf)ShelfRepository.getInstance().get(Id)).setCode(code);
+		((Shelf)ShelfRepository.getInstance().get(Id)).setCapacity(capacity);
+		((Shelf)ShelfRepository.getInstance().get(Id)).setPrice(price);
+	}
 	
 	/*
 	//Com arrayList
