@@ -84,6 +84,6 @@ public class Utils {
 				scanner.next();
 			}
 		}
-		
 	}
+
 }

@@ -73,6 +73,7 @@ public class TextInterface {
 				TextInterface.editarproduto();
 				break;
 			case 3:
+				TextInterface.consultarproduto();
 				break;
 			case 4:
 				TextInterface.eliminarproduto();
@@ -142,9 +143,10 @@ public class TextInterface {
 	public static void editarproduto(){
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Introduza o ID do producto que deseja editar");
+		
 		while(true){
 			if(!ProductList.isEmpty()){
+				System.out.println("Introduza o ID do producto que deseja editar");
 				int Id = Utils.validateInt();
 				if(Id==0){
 					TextInterface.menu2();
@@ -173,26 +175,69 @@ public class TextInterface {
 		}
 	}
 	
-	public static void eliminarproduto(){
+	public static void consultarproduto(){
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Introduza o ID do producto que deseja eliminar");
 		while(true){
-			if(!ProductList.isEmpty()){
+			
+			if(ProductList.isEmpty()){
+				System.out.println("Não existe qualquer produto em stock para consultar");
+				
+				TextInterface.menu1();
+			}else{
+				System.out.println("Introduza o ID do producto que deseja consultar");
 				int Id = Utils.validateInt();
 				if(Id==0){
 					TextInterface.menu2();
 				}else if(ProductList.ProductcontainsKey(Id)){
-					
-						//Colocarcenas
-						
+					System.out.println("O produto tem a seguinte informação:" + ProductList.get(Id));
+					System.out.println("Para voltar prima Enter");
+					while(true){
+						if (scanner.hasNext("")){
+							TextInterface.menu2();
+						}else{
+							System.out.println("Prima Enter para voltar atrás");
+							scanner.next();
+						}
+					}	
 				}else{
 					System.out.println("O Id do produto que inseriu não é válido. Insira o Id de um produto já existente");
 				}
-			}else{
+			}	
+		}
+	}
+	
+	public static void eliminarproduto(){
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true){
+			
+			if(ProductList.isEmpty()){
 				System.out.println("Não existe qualquer produto em stock para eliminar");
 				
 				TextInterface.menu1();
+			}else{
+				System.out.println("Introduza o ID do producto que deseja eliminar");
+				int Id = Utils.validateInt();
+				if(Id==0){
+					TextInterface.menu2();
+				}else if(ProductList.ProductcontainsKey(Id)){
+					System.out.println("O produto que deseja alterar tem a seguinte informação:" + ProductList.get(Id));
+					System.out.println("Tem a certeza que quer eliminar este produto? Prima (s) para confirmar ou (n) para cancelar a operação");
+					while(true){
+						if (scanner.hasNext("s")){
+							ProductList.remove(Id);
+							TextInterface.menu2();
+						}else if(scanner.hasNext("n")){
+							TextInterface.menu2();
+						}else{
+							System.out.println("Introduza uma comando válido: (s) para eliminar o produto seleccionado ou (n) para cancelar a operação");
+							scanner.next();
+						}
+					}	
+				}else{
+					System.out.println("O Id do produto que inseriu não é válido. Insira o Id de um produto já existente");
+				}
 			}	
 		}
 	}
@@ -223,7 +268,7 @@ public class TextInterface {
 	public static void editarprateleiramenu() {
 		System.out.println("1) Introduza o código da prateleira");
 		System.out.println("2) Introduza a capacidade da prateleira");
-		System.out.println("3) Introduza o preﾃｧo de aluguer da prateleira");
+		System.out.println("3) Introduza o preço de aluguer da prateleira");
 	}
 }
 

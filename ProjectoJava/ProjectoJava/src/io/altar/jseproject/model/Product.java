@@ -5,6 +5,7 @@ import io.altar.jseproject.repository.ProductRepository;
 public class Product extends Entity{
 	
 	//private int productId;
+	private int [] shelfIdLocation;
 	private double discount;
 	private int tax;
 	private double salePrice;
@@ -16,6 +17,13 @@ public class Product extends Entity{
 		this.productId = productId;
 	}
 	*/
+	public int [] getshelfIdlocation(){
+		return  shelfIdLocation;	
+	}
+	public void setshelfIdLocation (int [] shelfIdLocation){
+		this.shelfIdLocation = shelfIdLocation;
+	}
+	
 	public double getDiscount() {
 		return discount;
 	}

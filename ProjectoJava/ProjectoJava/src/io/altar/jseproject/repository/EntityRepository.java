@@ -51,4 +51,9 @@ public abstract class EntityRepository <E extends Entity> {
 	public boolean ShelfcontainsKey(int Id){
 		return Entities.containsKey(Id);
 	}
+
+	public Entity remove(int Id){
+		return Entities.remove(Id);
+	}
+	
 }
