@@ -20,8 +20,23 @@ public class ProductRepository extends EntityRepository <Product> {
 		((Product)ProductRepository.getInstance().get(Id)).setSalePrice(salePrice);
 	}
 
+	public static void editProductDiscount (int Id,double discount){
+		
+		((Product)ProductRepository.getInstance().get(Id)).setDiscount(discount);
 
+	}
+	
+	public static void editProductIVA (int Id, int tax){
+		
+		((Product)ProductRepository.getInstance().get(Id)).setTax(tax);
 
+	}
+
+	public static void editProductSalePrice (int Id, int salePrice){
+		
+		((Product)ProductRepository.getInstance().get(Id)).setSalePrice(salePrice);
+
+	}
 	
 	/*
 	//Com arrayList

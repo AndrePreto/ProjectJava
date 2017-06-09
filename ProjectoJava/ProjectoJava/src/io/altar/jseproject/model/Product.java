@@ -52,7 +52,7 @@ public class Product extends Entity{
 	
 	@Override
 	public String toString(){
-		return "|Id: " + getId() + "|Disconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|";             
+		return "|Id: " + getId() + "|Desconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|";             
 	}
 
 }

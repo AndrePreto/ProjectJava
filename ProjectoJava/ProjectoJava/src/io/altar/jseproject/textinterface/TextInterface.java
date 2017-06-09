@@ -140,7 +140,7 @@ public class TextInterface {
 		
 		new Product (discount, tax, salePrice);
 		
-		TextInterface.menu1();
+		TextInterface.menu2();
 	}
 	
 	public static void editarproduto(){
@@ -156,24 +156,59 @@ public class TextInterface {
 				}else if(ProductList.ProductcontainsKey(Id)){
 					
 					System.out.println("O produto que deseja alterar tem a seguinte informação:" + ProductList.get(Id));
+					System.out.println("Tem a certeza que quer editar este produto? Prima (s) para confirmar ou (n) para cancelar a operação");
 					
-					System.out.println("Introduza o novo disconto do produto");
-					double discount = Utils.validateDouble();
-					System.out.println("Introduza o novo IVA do produto");
-					int tax = Utils.validateIVA();
-					System.out.println("Introduza o novo preço de venda ao público do produto");
-					double salePrice = Utils.validateDouble();
-					
-					ProductRepository.editProduct(Id, discount, tax, salePrice);
-					TextInterface.menu1(); 
+					while(true){
 						
+						if (scanner.hasNext("s")){
+							
+							System.out.println("1) Editar apenas o desconto do produto");
+							System.out.println("2) Editar apenas o IVA do produto");
+							System.out.println("3) Editar apenas o preço de venda ao público do produto");
+							System.out.println("4) Editar todos os campos do produto");
+							
+							int input = Utils.getInput(1,4);
+							
+							switch(input){
+								case 1:
+									/*
+									System.out.println("Introduza o novo desconto do produto");
+									double discount = Utils.validateDouble();
+									ProductRepository.editProductDiscount(Id, discount);
+									TextInterface.menu2();
+									break;
+									*/
+								case 2:
+								case 3:
+								case 4:
+									System.out.println("Introduza o novo desconto do produto");
+									double discount = Utils.validateDouble();
+									System.out.println("Introduza o novo IVA do produto");
+									int tax = Utils.validateIVA();
+									System.out.println("Introduza o novo preço de venda ao público do produto");
+									double salePrice = Utils.validateDouble();
+					
+									ProductRepository.editProduct(Id, discount, tax, salePrice);
+									TextInterface.menu2();
+									break;
+							}
+							
+						}else if (scanner.hasNext("n")) {
+							TextInterface.menu2();
+							
+						}else{
+							System.out.println("Introduza uma comando válido: (s) para editar o produto seleccionado ou (n) para cancelar a operação");
+							scanner.next();
+						}
+						
+					}	
 				}else{
 					System.out.println("O Id do produto que inseriu não é válido. Insira o Id de um produto já existente");
 				}
 			}else{
 				System.out.println("Não existe qualquer produto em stock para editar");
 				
-				TextInterface.menu1();
+				TextInterface.menu2();
 			}	
 		}
 	}
@@ -186,7 +221,7 @@ public class TextInterface {
 			if(ProductList.isEmpty()){
 				System.out.println("Não existe qualquer produto em stock para consultar");
 				
-				TextInterface.menu1();
+				TextInterface.menu2();
 			}else{
 				System.out.println("Introduza o ID do producto que deseja consultar");
 				int Id = Utils.validateInt();
@@ -218,7 +253,7 @@ public class TextInterface {
 			if(ProductList.isEmpty()){
 				System.out.println("Não existe qualquer produto em stock para eliminar");
 				
-				TextInterface.menu1();
+				TextInterface.menu2();
 			}else{
 				System.out.println("Introduza o ID do producto que deseja eliminar");
 				int Id = Utils.validateInt();
@@ -261,7 +296,7 @@ public class TextInterface {
 		
 		new Shelf (code, capacity, price);
 		
-		TextInterface.menu1();
+		TextInterface.menu3();
 	}
 	
 	public static void editarprateleira(){
@@ -277,24 +312,34 @@ public class TextInterface {
 				}else if(ShelfList.ShelfcontainsKey(Id)){
 					
 					System.out.println("A prateleira que deseja alterar tem a seguinte informação:" + ShelfList.get(Id));
-					
-					System.out.println("Introduza o novo código da prateleira");
-					int code = Utils.validateInt();
-					System.out.println("Introduza a nova capacidade da prateleira");
-					int capacity = Utils.validateInt();
-					System.out.println("Introduza o novo preço de aluguer da prateleira");
-					double price = Utils.validateInt();
-					
-					ShelfRepository.editShelf(Id, code, capacity, price);
-					TextInterface.menu1(); 
+					System.out.println("Tem a certeza que quer editar esta prateleira? Prima (s) para confirmar ou (n) para cancelar a operação" );
+					while(true){
+						if(scanner.hasNext("s")){
+							
+							System.out.println("Introduza o novo código da prateleira");
+							int code = Utils.validateInt();
+							System.out.println("Introduza a nova capacidade da prateleira");
+							int capacity = Utils.validateInt();
+							System.out.println("Introduza o novo preço de aluguer da prateleira");
+							double price = Utils.validateInt();
 						
+							ShelfRepository.editShelf(Id, code, capacity, price);
+							TextInterface.menu3();
+							
+						}else if(scanner.hasNext("n")){
+							TextInterface.menu3();
+						}else{
+							System.out.println("Introduza uma comando válido: (s) para editar a prateleira seleccionada ou (n) para cancelar a operação");
+						}
+					}	
 				}else{
 					System.out.println("O Id da prateleira que inseriu não é válido. Insira o Id de uma prateleira já existente");
 				}
+				
 			}else{
 				System.out.println("Não existe qualquer prateleira para editar");
 				
-				TextInterface.menu1();
+				TextInterface.menu3();
 			}	
 		}
 	}
@@ -307,7 +352,7 @@ public class TextInterface {
 			if(ShelfList.isEmpty()){
 				System.out.println("Não existe qualquer prateleira para consultar");
 				
-				TextInterface.menu1();
+				TextInterface.menu3();
 			}else{																																																																																																																																																																																																																																																
 				System.out.println("Introduza o ID da prateleira que deseja consultar");
 				int Id = Utils.validateInt();
@@ -339,12 +384,12 @@ public class TextInterface {
 			if(ShelfList.isEmpty()){
 				System.out.println("Não existe qualquer prateleira para eliminar");
 				
-				TextInterface.menu1();
+				TextInterface.menu3();
 			}else{
 				System.out.println("Introduza o ID da prateleira que deseja eliminar");
 				int Id = Utils.validateInt();
 				if(Id==0){
-					TextInterface.menu2();
+					TextInterface.menu3();
 				}else if(ShelfList.ShelfcontainsKey(Id)){
 					System.out.println("A prateleira que deseja eliminar tem a seguinte informação:" + ShelfList.get(Id));
 					System.out.println("Tem a certeza que quer eliminar esta prateleira? Prima (s) para confirmar ou (n) para cancelar a operação");
