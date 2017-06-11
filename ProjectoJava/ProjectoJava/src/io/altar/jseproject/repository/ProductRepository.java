@@ -32,7 +32,7 @@ public class ProductRepository extends EntityRepository <Product> {
 
 	}
 
-	public static void editProductSalePrice (int Id, int salePrice){
+	public static void editProductSalePrice (int Id, double salePrice){
 		
 		((Product)ProductRepository.getInstance().get(Id)).setSalePrice(salePrice);
 

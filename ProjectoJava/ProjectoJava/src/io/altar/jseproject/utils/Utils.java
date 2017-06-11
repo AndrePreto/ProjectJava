@@ -16,10 +16,10 @@ public class Utils {
 				if (input >= min && input <= max){
 					return input;
 				} else {
-				System.out.println("Seleccione um valor numérico entre " + min + " e" + max);
+				System.out.println("Seleccione um valor numérico entre " + min + " e " + max);
 				}
 			} else {
-				System.out.println("Seleccione um valor numérico entre " + min + " e" + max);
+				System.out.println("Seleccione um valor numérico entre " + min + " e " + max);
 				scanner.next();
 			}
 		}
