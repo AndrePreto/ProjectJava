@@ -86,4 +86,29 @@ public class Utils {
 		}
 	}
 
+	public static String validateEmpty(){
+		Scanner scanner = new Scanner(System.in);
+		
+		int inputvalue = 0;
+		String input = scanner.nextLine();
+		
+		while(true){
+			
+			try{
+				if (scanner.hasNextLine()){
+					inputvalue = Integer.parseInt(input);
+					if(inputvalue>0){
+						return input;
+					}else{
+						System.out.println("Por favor introduza um número positivo");
+					}
+				}
+			}catch(Exception NumberFormatException){
+					System.out.println("Por favor introduza um número");
+					scanner.next();
+			}
+
+		}
+	}
+
 }
