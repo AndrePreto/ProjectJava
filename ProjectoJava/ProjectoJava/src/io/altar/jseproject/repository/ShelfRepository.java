@@ -20,6 +20,20 @@ public class ShelfRepository extends EntityRepository <Shelf> {
 		((Shelf)ShelfRepository.getInstance().get(Id)).setPrice(price);
 	}
 	
+	public static void editShelfCode (int Id, int code){
+		
+		((Shelf)ShelfRepository.getInstance().get(Id)).setCode(code);
+	}
+	
+	public static void editShelfCapacity (int Id, int capacity){
+		
+		((Shelf)ShelfRepository.getInstance().get(Id)).setCapacity(capacity);
+	}
+	
+	public static void editShelfPrice (int Id, double price){
+		
+		((Shelf)ShelfRepository.getInstance().get(Id)).setPrice(price);
+	}
 	/*
 	//Com arrayList
 	//public static ArrayList<Shelf> Shelfs = new ArrayList<Shelf> ();

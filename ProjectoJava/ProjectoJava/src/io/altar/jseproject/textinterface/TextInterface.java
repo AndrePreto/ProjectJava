@@ -132,11 +132,11 @@ public class TextInterface {
 		System.out.println("O producto tem o ID:" + Id);
 		
 		System.out.println("Introduza o disconto do produto");
-		double discount = Utils.validateDouble();
+		double discount = Double.parseDouble(Utils.validateDouble(false));
 		System.out.println("Introduza o valor do IVA do produto");
-		int tax = Utils.validateIVA();
+		int tax = Integer.parseInt(Utils.validateIVA(false));
 		System.out.println("Introduza o preço de venda ao público do produto");
-		double salePrice = Utils.validateDouble();
+		double salePrice = Double.parseDouble(Utils.validateDouble(false));
 		
 		new Product (discount, tax, salePrice);
 		
@@ -150,7 +150,7 @@ public class TextInterface {
 		while(true){
 			if(!ProductList.isEmpty()){
 				System.out.println("Introduza o ID do producto que deseja editar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu2();
 				}else if(ProductList.ProductcontainsKey(Id)){
@@ -172,28 +172,51 @@ public class TextInterface {
 							switch(input){
 								case 1:
 									System.out.println("Introduza o novo desconto do produto");
-									int discountOnly = Integer.parseInt(Utils.validateEmpty());
-									ProductRepository.editProductDiscount(Id, discountOnly);
+									String Newdiscount = Utils.validateEmptyDouble();
+									if(Newdiscount != null){
+										double discountOnly = Double.parseDouble(Newdiscount);
+										ProductRepository.editProductDiscount(Id, discountOnly);
+									}
 									TextInterface.menu2();
 									break;
 								case 2:
 									System.out.println("Introduza o novo IVA do produto");
-									int taxOnly = Utils.validateIVA();
-									ProductRepository.editProductIVA(Id, taxOnly);
+									String NewTax = Utils.validateEmptyIVA();
+									if(NewTax != null){
+										int taxOnly = Integer.parseInt(NewTax);
+										ProductRepository.editProductIVA(Id, taxOnly);
+									}
 									TextInterface.menu2();
 									break;
 								case 3:
 									System.out.println("Introduza o novo preço de venda ao público do produto");
-									double salePriceOnly = Utils.validateDouble();
-									ProductRepository.editProductSalePrice(Id, salePriceOnly);
+									String NewSalePrice = Utils.validateEmptyDouble();
+									if(NewSalePrice != null){
+										double salePriceOnly = Double.parseDouble(NewSalePrice);
+										ProductRepository.editProductSalePrice(Id, salePriceOnly);
+									}
 									TextInterface.menu2();
+									break;
 								case 4:
 									System.out.println("Introduza o novo desconto do produto");
-									double discount = Utils.validateDouble();
+									String discountNew = Utils.validateEmptyDouble();
+									double discount = ((Product)ProductRepository.getInstance().get(Id)).getDiscount();
+									if(discountNew != null){
+										discount = Double.parseDouble(discountNew);
+										ProductRepository.editProductSalePrice(Id, discount);
+									}
 									System.out.println("Introduza o novo IVA do produto");
-									int tax = Utils.validateIVA();
+									String TaxNew = Utils.validateEmptyIVA();
+									int tax = ((Product)ProductRepository.getInstance().get(Id)).getTax();
+									if(TaxNew != null){
+										tax = Integer.parseInt(TaxNew);
+									}
 									System.out.println("Introduza o novo preço de venda ao público do produto");
-									double salePrice = Utils.validateDouble();
+									String SalePriceNew = Utils.validateEmptyDouble();
+									double salePrice = ((Product)ProductRepository.getInstance().get(Id)).getSalePrice();
+									if(SalePriceNew != null){
+										salePrice = Double.parseDouble(SalePriceNew);
+									}
 					
 									ProductRepository.editProduct(Id, discount, tax, salePrice);
 									TextInterface.menu2();
@@ -231,7 +254,7 @@ public class TextInterface {
 				TextInterface.menu2();
 			}else{
 				System.out.println("Introduza o ID do producto que deseja consultar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu2();
 				}else if(ProductList.ProductcontainsKey(Id)){
@@ -255,7 +278,7 @@ public class TextInterface {
 				TextInterface.menu2();
 			}else{
 				System.out.println("Introduza o ID do producto que deseja eliminar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu2();
 				}else if(ProductList.ProductcontainsKey(Id)){
@@ -287,11 +310,11 @@ public class TextInterface {
 		System.out.println("A prateleira tem o ID:" + Id);
 		
 		System.out.println("Introduza o código da prateleira");
-		int code = Utils.validateInt();
+		int code = Integer.parseInt(Utils.validateInt(false));
 		System.out.println("Introduza a capacidade da prateleira");
-		int capacity = Utils.validateInt();
+		int capacity = Integer.parseInt(Utils.validateInt(false));
 		System.out.println("Introduza o preço de aluguer da prateleira");
-		int price = Utils.validateInt();
+		double price = Double.parseDouble(Utils.validateDouble(false));
 		
 		new Shelf (code, capacity, price);
 		
@@ -305,7 +328,7 @@ public class TextInterface {
 		while(true){
 			if(!ShelfList.isEmpty()){
 				System.out.println("Introduza o ID da prateleira que deseja editar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu3();
 				}else if(ShelfList.ShelfcontainsKey(Id)){
@@ -316,11 +339,11 @@ public class TextInterface {
 						if(scanner.hasNext("s")){
 							
 							System.out.println("Introduza o novo código da prateleira");
-							int code = Utils.validateInt();
+							int code = Integer.parseInt(Utils.validateInt(false));
 							System.out.println("Introduza a nova capacidade da prateleira");
-							int capacity = Utils.validateInt();
+							int capacity = Integer.parseInt(Utils.validateInt(false));
 							System.out.println("Introduza o novo preço de aluguer da prateleira");
-							double price = Utils.validateInt();
+							double price = Double.parseDouble(Utils.validateDouble(false));
 						
 							ShelfRepository.editShelf(Id, code, capacity, price);
 							TextInterface.menu3();
@@ -354,7 +377,7 @@ public class TextInterface {
 				TextInterface.menu3();
 			}else{																																																																																																																																																																																																																																																
 				System.out.println("Introduza o ID da prateleira que deseja consultar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu3();
 				}else if(ShelfList.ShelfcontainsKey(Id)){
@@ -386,7 +409,7 @@ public class TextInterface {
 				TextInterface.menu3();
 			}else{
 				System.out.println("Introduza o ID da prateleira que deseja eliminar");
-				int Id = Utils.validateInt();
+				int Id = Integer.parseInt(Utils.validateInt(false));
 				if(Id==0){
 					TextInterface.menu3();
 				}else if(ShelfList.ShelfcontainsKey(Id)){
