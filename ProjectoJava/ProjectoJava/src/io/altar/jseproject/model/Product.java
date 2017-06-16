@@ -1,11 +1,13 @@
 package io.altar.jseproject.model;
 
+import java.util.ArrayList;
+
 import io.altar.jseproject.repository.ProductRepository;
 
 public class Product extends Entity{
 	
 	//private int productId;
-	private int [] shelfIdLocation;
+	private ArrayList<Integer> shelfIdLocation;
 	private double discount;
 	private int tax;
 	private double salePrice;
@@ -17,10 +19,10 @@ public class Product extends Entity{
 		this.productId = productId;
 	}
 	*/
-	public int [] getshelfIdlocation(){
+	public  ArrayList<Integer> getshelfIdlocation(){
 		return  shelfIdLocation;	
 	}
-	public void setshelfIdLocation (int [] shelfIdLocation){
+	public void setshelfIdLocation (ArrayList<Integer> shelfIdLocation){
 		this.shelfIdLocation = shelfIdLocation;
 	}
 	

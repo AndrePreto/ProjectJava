@@ -2,10 +2,13 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="org.altar.upacademy"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="JSF_DEMOS"/>
+			<item value="JSF_DEMO"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -17,6 +20,18 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
@@ -32,6 +47,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/Users/alunomanha/Desktop/ProjectJava/ProjectoJava/JSF_DEMO"/>
 			<item value="/Users/alunomanha/Desktop/ProjectJava/ProjectoJava/ProjectoJava/src"/>
 			<item value="/Users/alunomanha/Desktop/ProjectJava/ProjectoJava/ProjectoJava"/>
 		</list>
