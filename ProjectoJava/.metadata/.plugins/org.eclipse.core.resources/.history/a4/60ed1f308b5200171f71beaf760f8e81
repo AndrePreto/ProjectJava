@@ -1,5 +1,6 @@
 package io.altar.jseproject.repository;
 
+import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
 
 public class ShelfRepository extends EntityRepository <Shelf> {
