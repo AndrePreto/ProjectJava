@@ -5,3 +5,13 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-06-16 10:00:27.941
 !MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2017-06-17 14:13:13.546
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Users\Andre\Desktop\eclipse 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-06-17 14:13:16.578
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-06-17 14:13:40.319
+!MESSAGE Server Startup Succeeded

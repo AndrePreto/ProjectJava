@@ -1,5 +1,6 @@
 package io.altar.jseproject.utils;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import io.altar.jseproject.model.Product;
@@ -119,7 +120,27 @@ public class Utils {
 
 		}
 	}
-	
+/*	
+	public static ArrayList<Integer> validateIntArray(){
+		Scanner scanner = new Scanner(System.in);
+		
+		String input = scanner.nextLine();
+		
+		while(true){
+			
+			try{
+				Double.parseDouble(input);
+				if(Double.parseDouble(input)>0){
+					return input;
+				}else{
+					System.out.println("Introduza um número positivo");
+				}
+			}catch(Exception NumberFormatException){
+				System.out.println("Por favor introduza um número");
+			}
+		}
+	}
+*/	
 	
 	public static String validateEmptyIVA(){
 		Scanner scanner = new Scanner(System.in);

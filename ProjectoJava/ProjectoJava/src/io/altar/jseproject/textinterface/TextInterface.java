@@ -1,6 +1,7 @@
 package io.altar.jseproject.textinterface;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Collections;
 
 import io.altar.jseproject.model.Product;
@@ -129,7 +130,8 @@ public class TextInterface {
 	public static void criarproduto(){
 		
 		int Id = ProductRepository.productNextId();
-		System.out.println("O producto tem o ID:" + Id);
+		System.out.println("O producto tem o ID:" + Id +"\n");
+		
 		
 		System.out.println("Introduza o disconto do produto");
 		double discount = Double.parseDouble(Utils.validateDouble(false));
@@ -137,6 +139,8 @@ public class TextInterface {
 		int tax = Integer.parseInt(Utils.validateIVA(false));
 		System.out.println("Introduza o preço de venda ao público do produto");
 		double salePrice = Double.parseDouble(Utils.validateDouble(false));
+		System.out.println("Introduza a prateleira onde deseja colocar o produto criado");
+		//ArrayList<Integer> shelfIdLocation = Integer.parseInt(Utils.validateInt(false));
 		
 		new Product (discount, tax, salePrice);
 		
@@ -308,6 +312,8 @@ public class TextInterface {
 		
 		int Id = EntityRepository.shelfNextId();
 		System.out.println("A prateleira tem o ID:" + Id);
+		
+		System.out.println("");
 		
 		System.out.println("Introduza o código da prateleira");
 		int code = Integer.parseInt(Utils.validateInt(false));

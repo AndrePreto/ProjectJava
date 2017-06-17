@@ -49,12 +49,13 @@ public class Product extends Entity{
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
+		/*this.shelfIdLocation = shelfIdLocation*/;
 		ProductRepository.getInstance().PutOnListProduct(this);
 	}
 	
 	@Override
 	public String toString(){
-		return "|Id: " + getId() + "|Desconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|";             
+		return "|Id: " + getId() + "|Desconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|Prateleira: " + shelfIdLocation +"|";             
 	}
 
 }
