@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="" key="defaultDestinationPath"/>
-	<item value="/Users/alunomanha" key="defaultDialogPath"/>
+	<item value="C:\Users\Andre" key="defaultDialogPath"/>
 	<item value="true" key="deleteOnExit"/>
 	<section name="downloadRuntimeSection">
 	</section>
