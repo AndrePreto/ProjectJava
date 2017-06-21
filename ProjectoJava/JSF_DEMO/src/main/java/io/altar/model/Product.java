@@ -7,7 +7,7 @@ import io.altar.repository.ProductRepository;
 public class Product extends Entity{
 	
 	//private int productId;
-	private ArrayList<Integer> shelfIdLocation;
+	//private ArrayList<Integer> shelfIdLocation;
 	private double discount;
 	private int tax;
 	private double salePrice;
@@ -20,12 +20,12 @@ public class Product extends Entity{
 		this.productId = productId;
 	}
 	*/
-	public  ArrayList<Integer> getshelfIdlocation(){
-		return  shelfIdLocation;	
-	}
-	public void setshelfIdLocation (ArrayList<Integer> shelfIdLocation){
-		this.shelfIdLocation = shelfIdLocation;
-	}
+//	public  ArrayList<Integer> getshelfIdlocation(){
+//		return  shelfIdLocation;	
+//	}
+//	public void setshelfIdLocation (ArrayList<Integer> shelfIdLocation){
+//		this.shelfIdLocation = shelfIdLocation;
+//	}
 	
 	public double getDiscount() {
 		return discount;
@@ -46,7 +46,7 @@ public class Product extends Entity{
 		this.salePrice = salePrice;
 	}
 
-	public Product(int id, double discount, int tax, double salePrice) {
+	public Product(double discount, int tax, double salePrice) {
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
@@ -56,7 +56,7 @@ public class Product extends Entity{
 	
 	@Override
 	public String toString(){
-		return "|Id: " + getId() + "|Desconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|Prateleira: " + shelfIdLocation +"|";             
+		return "|Id: " + getId() + "|Desconto: " + discount + " €" + "|IVA: " + tax + " %" + "|Preço de Venda: " + salePrice + " €" + "|";             
 	}
 
 }
