@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Set;
 
 import io.altar.model.Entity;
-import io.altar.model.Product;
 
 
 public abstract class EntityRepository <E extends Entity> {

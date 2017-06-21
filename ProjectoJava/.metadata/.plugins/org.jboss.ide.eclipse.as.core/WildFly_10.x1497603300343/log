@@ -205,3 +205,13 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-06-20 10:11:04.218
 !MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-06-21 08:06:39.189
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-06-21 08:06:53.899
+!MESSAGE Module JSF_DEMO on WildFly 10.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-06-21 08:06:53.920
+!MESSAGE Server Startup Succeeded

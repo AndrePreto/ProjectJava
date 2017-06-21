@@ -142,11 +142,14 @@
    <linked-el length="24" name="%0" offset="351" path="%1"/>
    <linked-el length="24" name="%0" offset="432" path="%1"/>
    <linked-el length="24" name="%0" offset="270" path="%1"/>
-   <linked-el length="19" name="%2" offset="454" path="%3"/>
-   <linked-el length="24" name="%4" offset="351" path="%1"/>
-   <linked-el length="24" name="%4" offset="432" path="%1"/>
-   <linked-el length="24" name="%4" offset="270" path="%1"/>
-   <linked-el length="19" name="%5" offset="454" path="%3"/>
+   <linked-el length="19" name="%2" offset="458" path="%3"/>
+   <linked-el length="25" name="%4" offset="1054" path="%5"/>
+   <linked-el length="25" name="%6" offset="1054" path="%5"/>
+   <linked-el length="24" name="%7" offset="351" path="%1"/>
+   <linked-el length="24" name="%7" offset="432" path="%1"/>
+   <linked-el length="24" name="%7" offset="270" path="%1"/>
+   <linked-el length="19" name="%8" offset="458" path="%3"/>
+   <linked-el length="25" name="%3" offset="1054" path="%5"/>
   </el>
  </validation>
  <aliases>
@@ -154,10 +157,13 @@
    path="/JSF_DEMO/src/main/java/io/altar/upacademy/Navigator.java" value="%0"/>
   <alias path="/JSF_DEMO/src/main/webapp/result.xhtml" value="%1"/>
   <alias path="ProductService" value="%2"/>
-  <alias path="navigator" value="%4"/>
+  <alias path="ProductView" value="%4"/>
+  <alias path="ProductView.products" value="%6"/>
+  <alias path="navigator" value="%7"/>
   <alias path="/JSF_DEMO/src/main/java/io/altar/view/ProductView.java" value="%3"/>
   <alias
-   path="/JSF_DEMO/src/main/java/io/altar/service/ProductService.java" value="%5"/>
+   path="/JSF_DEMO/src/main/java/io/altar/service/ProductService.java" value="%8"/>
+  <alias path="/JSF_DEMO/src/main/webapp/index.xhtml" value="%5"/>
  </aliases>
  <includes/>
  <uris>

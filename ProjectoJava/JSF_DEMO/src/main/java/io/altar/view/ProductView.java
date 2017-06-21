@@ -14,13 +14,16 @@ import io.altar.service.ProductService;
 @ViewScoped 
 
 public class ProductView implements Serializable{
+	
 	private List <Product> products;
+	
     @ManagedProperty("#{ProductService}")
     private ProductService productservice;
+ 
     
     @PostConstruct
     public void init() {
-        //products = productservice.createProduct();
+        products = productservice.createProduct();
     }
     
     public List<Product> getProduct() {
@@ -29,5 +32,8 @@ public class ProductView implements Serializable{
  
     public void setService(ProductService productservice) {
         this.productservice = productservice;
+    }
+    public ProductService getService(){
+    	return productservice;
     }
 }

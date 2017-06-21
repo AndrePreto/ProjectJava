@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="io.altar.model.Product"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="io.altar.service.ProductService"/>
+<fullyQualifiedTypeName name="io.altar.repository.ProductRepository"/>
 </qualifiedTypeNameHistroy>

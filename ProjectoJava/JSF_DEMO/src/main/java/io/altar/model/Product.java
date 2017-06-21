@@ -11,6 +11,7 @@ public class Product extends Entity{
 	private double discount;
 	private int tax;
 	private double salePrice;
+	private ProductRepository productRepository = new ProductRepository();
 	/*
 	public int getProductId() {
 		return productId;
@@ -45,12 +46,12 @@ public class Product extends Entity{
 		this.salePrice = salePrice;
 	}
 
-	public Product(double discount, int tax, double salePrice) {
+	public Product(int id, double discount, int tax, double salePrice) {
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;
 		/*this.shelfIdLocation = shelfIdLocation*/;
-		ProductRepository.getInstance().PutOnListProduct(this);
+		productRepository.PutOnListProduct(this);
 	}
 	
 	@Override
