@@ -1,9 +1,8 @@
 package io.altar.service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
-import javax.faces.bean.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 import io.altar.model.Product;
@@ -13,9 +12,13 @@ import io.altar.repository.ProductRepository;
 @ApplicationScoped
 public class ProductService {
 	
-	public List<Product> createProducts() {
-        List<Product> list = new ArrayList<Product>();
-         
-        return list;
-    }
+	private ProductRepository ProductList = new ProductRepository();
+	
+	public void createProducts() {
+		ProductList.PutOnListProduct(new Product(1,2,3,4));
+	}
+	
+	public Collection<Product> getProducts(){
+		return ProductList.getall();
+	}
 }

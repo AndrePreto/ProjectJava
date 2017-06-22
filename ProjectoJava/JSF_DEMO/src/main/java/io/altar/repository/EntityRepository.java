@@ -1,5 +1,6 @@
 package io.altar.repository;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import io.altar.model.Entity;
 
 public abstract class EntityRepository <E extends Entity> {
 	
-	private LinkedHashMap <Integer, Entity> Entities = new LinkedHashMap <Integer, Entity> ();
+	private LinkedHashMap <Integer, E> Entities = new LinkedHashMap <> ();
 	
 	private static int productId = 0;
 	
@@ -16,7 +17,7 @@ public abstract class EntityRepository <E extends Entity> {
 		return ++productId;
 	}
 		
-	public void PutOnListProduct(Entity Product){
+	public void PutOnListProduct(E Product){
 		Product.setId(productId);
 		Entities.put(Product.getId(), Product);
 	}
@@ -27,7 +28,7 @@ public abstract class EntityRepository <E extends Entity> {
 		return ++shelfId;
 	}
 		
-	public void PutOnListShelf(Entity Shelf){
+	public void PutOnListShelf(E Shelf){
 		Shelf.setId(shelfId);
 		Entities.put(Shelf.getId(), Shelf);
 	}
@@ -53,6 +54,10 @@ public abstract class EntityRepository <E extends Entity> {
 
 	public Entity remove(int Id){
 		return Entities.remove(Id);
+	}
+	
+	public Collection<E> getall(){
+		return Entities.values();
 	}
 	
 }

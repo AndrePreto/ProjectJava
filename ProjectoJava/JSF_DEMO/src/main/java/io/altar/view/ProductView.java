@@ -1,36 +1,33 @@
 package io.altar.view;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
+
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
 
 import io.altar.model.Product;
 import io.altar.service.ProductService;
 
-@ManagedBean(name="ProductView")
-@ViewScoped 
+@ManagedBean(name="productView")
+@RequestScoped
 public class ProductView implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-
-	private List<Product> products;
-
-	
-	@ManagedProperty(value="#{productService}")
+	@Inject
     private ProductService productService;
     
     @PostConstruct
     public void init() {
-    	products = productService.createProducts();
+    	productService.createProducts();
     			
     }
      
-    public List<Product> getProducts() {
-        return products;
+    public Collection<Product> getProducts() {
+        return productService.getProducts();
     }
     
     public ProductService getProductService() {

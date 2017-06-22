@@ -1,25 +1,23 @@
 package io.altar.model;
 
-import java.util.ArrayList;
-
 import io.altar.repository.ProductRepository;
 
 public class Product extends Entity{
 	
-	//private int productId;
+	private int productId;
 	//private ArrayList<Integer> shelfIdLocation;
 	private double discount;
 	private int tax;
 	private double salePrice;
 	private ProductRepository productRepository = new ProductRepository();
-	/*
+	
 	public int getProductId() {
 		return productId;
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	*/
+	
 //	public  ArrayList<Integer> getshelfIdlocation(){
 //		return  shelfIdLocation;	
 //	}
@@ -46,7 +44,8 @@ public class Product extends Entity{
 		this.salePrice = salePrice;
 	}
 
-	public Product(double discount, int tax, double salePrice) {
+	public Product(int productId, double discount, int tax, double salePrice) {
+		this.productId = productId;
 		this.discount = discount;
 		this.tax = tax;
 		this.salePrice = salePrice;

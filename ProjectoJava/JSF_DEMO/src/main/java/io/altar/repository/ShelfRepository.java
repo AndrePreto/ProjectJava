@@ -4,34 +4,34 @@ import io.altar.model.Shelf;
 
 public class ShelfRepository extends EntityRepository <Shelf> {
 	
-	private static final ShelfRepository INSTANCE = new ShelfRepository();
+//	private static final ShelfRepository INSTANCE = new ShelfRepository();
 	
-	private ShelfRepository(){}
+	public ShelfRepository(){}
 	
-	public static ShelfRepository getInstance(){
-		return INSTANCE;
+//	public static ShelfRepository getInstance(){
+//		return INSTANCE;
+//	}
+	
+	public void editShelf (int Id, int code, int capacity, double price){
+		
+		((Shelf) get(Id)).setCode(code);
+		((Shelf) get(Id)).setCapacity(capacity);
+		((Shelf) get(Id)).setPrice(price);
 	}
 	
-	public static void editShelf (int Id, int code, int capacity, double price){
+	public void editShelfCode (int Id, int code){
 		
-		((Shelf)ShelfRepository.getInstance().get(Id)).setCode(code);
-		((Shelf)ShelfRepository.getInstance().get(Id)).setCapacity(capacity);
-		((Shelf)ShelfRepository.getInstance().get(Id)).setPrice(price);
+		((Shelf) get(Id)).setCode(code);
 	}
 	
-	public static void editShelfCode (int Id, int code){
+	public void editShelfCapacity (int Id, int capacity){
 		
-		((Shelf)ShelfRepository.getInstance().get(Id)).setCode(code);
+		((Shelf) get(Id)).setCapacity(capacity);
 	}
 	
-	public static void editShelfCapacity (int Id, int capacity){
+	public void editShelfPrice (int Id, double price){
 		
-		((Shelf)ShelfRepository.getInstance().get(Id)).setCapacity(capacity);
-	}
-	
-	public static void editShelfPrice (int Id, double price){
-		
-		((Shelf)ShelfRepository.getInstance().get(Id)).setPrice(price);
+		((Shelf) get(Id)).setPrice(price);
 	}
 	/*
 	//Com arrayList

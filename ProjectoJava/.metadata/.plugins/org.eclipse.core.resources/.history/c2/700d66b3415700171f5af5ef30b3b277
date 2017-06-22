@@ -1,0 +1,41 @@
+package io.altar.view;
+
+import java.io.Serializable;
+import java.util.Collection;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
+
+import io.altar.model.Shelf;
+import io.altar.service.ShelfService;
+
+@ManagedBean(name="shelfView")
+@RequestScoped
+public class ShelfView implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Inject
+    private ShelfService shelfService;
+    
+    @PostConstruct
+    public void init() {
+    	shelfService.createShelves();
+    			
+    }
+     
+    public Collection<Product> getProducts() {
+        return productService.getProducts();
+    }
+    
+    public ProductService getProductService() {
+        return productService;
+    }
+ 
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+    
+}

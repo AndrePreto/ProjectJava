@@ -10,6 +10,11 @@
 <fullyQualifiedTypeName name="io.altar.model.Product"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="io.altar.service.ProductService"/>
-<fullyQualifiedTypeName name="io.altar.repository.ProductRepository"/>
 <fullyQualifiedTypeName name="javax.faces.bean.ApplicationScoped"/>
+<fullyQualifiedTypeName name="io.altar.repository.ProductRepository"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
+<fullyQualifiedTypeName name="javax.enterprise.context.ApplicationScoped"/>
+<fullyQualifiedTypeName name="io.altar.service.ShelfService"/>
 </qualifiedTypeNameHistroy>

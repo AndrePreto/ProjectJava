@@ -1,0 +1,13 @@
+package io.altar.service;
+
+import java.util.Collection;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+
+import io.altar.model.Shelf;
+import io.altar.repository.ShelfRepository;
+
+public class ShelfService {
+
+}
