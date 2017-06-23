@@ -22,20 +22,21 @@ public class ProductView implements Serializable {
     
     @PostConstruct
     public void init() {
-    	productService.createProducts();
-    			
-    }
-     
-    public Collection<Product> getProducts() {
-        return productService.getProducts();
+    	productService.createProducts();		
     }
     
-    public ProductService getProductService() {
+     public ProductService getProductService() {
         return productService;
     }
  
     public void setProductService(ProductService productService) {
         this.productService = productService;
+    } 
+    
+    public Collection<Product> getProducts() {
+        return productService.getProducts();
     }
+    
+
     
 }

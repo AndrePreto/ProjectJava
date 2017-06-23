@@ -15,7 +15,9 @@ public class ProductService {
 	private ProductRepository ProductList = new ProductRepository();
 	
 	public void createProducts() {
-		ProductList.PutOnListProduct(new Product(1,2,3,4));
+		int id = 
+		
+		ProductList.PutOnListProduct(new Product(id, discount, tax, salePrice));
 	}
 	
 	public Collection<Product> getProducts(){
