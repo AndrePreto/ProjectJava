@@ -1,0 +1,55 @@
+package io.altar.service;
+
+import java.util.Collection;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+
+import io.altar.model.Product;
+import io.altar.repository.ProductRepository;
+
+@ManagedBean(name = "productService")
+@ApplicationScoped
+public class ProductService {
+	
+	private ProductRepository ProductList = new ProductRepository();
+	
+	private int productId;
+	private double discount;
+	private int tax;
+	private double salePrice;
+	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+	public int getTax() {
+		return tax;
+	}
+	public void setTax(int tax) {
+		this.tax = tax;
+	}
+	public double getSalePrice() {
+		return salePrice;
+	}
+	public void setSalePrice(double salePrice) {
+		this.salePrice = salePrice;
+	}
+	
+	public void createProducts() {
+		
+		ProductList.PutOnListProduct(new Product(productId, discount, tax, salePrice));
+	}
+	
+	public Collection<Product> getProducts(){
+		return ProductList.getall();
+	}
+}

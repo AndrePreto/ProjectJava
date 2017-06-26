@@ -60,6 +60,29 @@
 					   	 </p:tab>
 				   	 </p:tabView>
 		   	 	</h:form>
+		   	 	
+		   	 	<h:form>
+        							
+					<p>Insert product details</p>
+  								
+						<h:panelGrid columns="2">
+  							
+
+							<h:outputText value="Discount: "/>
+							<p:inputText value="#{productView.product.discount}" required="true"/>
+							<h:outputText value="IVA: "/>
+							<p:inputText value="#{productView.product.tax}" required="true"/>
+							<h:outputText value="Price: "/>
+							<p:inputText value="#{productView.product.salePrice}" required="true"/>
+							<br />
+				
+						</h:panelGrid>
+										
+							<h:commandButton value="Save" action="#{productView.addProduct}" />
+							<h:commandButton value="Cancel" />
+	
+				</h:form>
+				
 	   	 	</ui:define>
    	 	</ui:composition>
 	</body>

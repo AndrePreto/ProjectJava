@@ -1,7 +1,5 @@
 package io.altar.model;
 
-import io.altar.repository.ProductRepository;
-
 public class Product extends Entity{
 	
 	private int productId;
@@ -9,7 +7,6 @@ public class Product extends Entity{
 	private double discount;
 	private int tax;
 	private double salePrice;
-	private ProductRepository productRepository = new ProductRepository();
 	
 	public int getProductId() {
 		return productId;
@@ -44,13 +41,7 @@ public class Product extends Entity{
 		this.salePrice = salePrice;
 	}
 
-	public Product(int productId, double discount, int tax, double salePrice) {
-		this.productId = productId;
-		this.discount = discount;
-		this.tax = tax;
-		this.salePrice = salePrice;
-		/*this.shelfIdLocation = shelfIdLocation*/;
-		productRepository.PutOnListProduct(this);
+	public Product() {
 	}
 	
 	@Override

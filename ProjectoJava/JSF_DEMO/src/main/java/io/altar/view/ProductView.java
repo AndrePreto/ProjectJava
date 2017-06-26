@@ -3,15 +3,14 @@ package io.altar.view;
 import java.io.Serializable;
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import io.altar.model.Product;
 import io.altar.service.ProductService;
 
-@ManagedBean(name="productView")
+@Named("productView")
 @RequestScoped
 public class ProductView implements Serializable {
 
@@ -19,19 +18,28 @@ public class ProductView implements Serializable {
 
 	@Inject
     private ProductService productService;
-    
-    @PostConstruct
-    public void init() {
-    	productService.createProducts();		
+
+	private Product product = new Product();
+
+    public void addProduct() {
+    	productService.createProducts(product);		
     }
     
-     public ProductService getProductService() {
-        return productService;
-    }
- 
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
-    } 
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+//    
+//     public ProductService getProductService() {
+//        return productService;
+//    }
+// 
+//    public void setProductService(ProductService productService) {
+//        this.productService = productService;
+//    } 
     
     public Collection<Product> getProducts() {
         return productService.getProducts();

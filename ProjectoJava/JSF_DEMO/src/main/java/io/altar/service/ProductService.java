@@ -2,22 +2,21 @@ package io.altar.service;
 
 import java.util.Collection;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 import io.altar.model.Product;
 import io.altar.repository.ProductRepository;
 
-@ManagedBean(name = "productService")
-@ApplicationScoped
+@Named("productService")
+@RequestScoped
 public class ProductService {
 	
 	private ProductRepository ProductList = new ProductRepository();
 	
-	public void createProducts() {
-		int id = 
+	public void createProducts(Product product) {
 		
-		ProductList.PutOnListProduct(new Product(id, discount, tax, salePrice));
+		ProductList.PutOnListProduct(product);
 	}
 	
 	public Collection<Product> getProducts(){
