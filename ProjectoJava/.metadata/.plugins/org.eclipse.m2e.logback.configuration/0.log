@@ -3472,3 +3472,42 @@ Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have 
 2017-06-26 12:52:25,396 [Worker-175] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of JSF_DEMO
 2017-06-26 12:52:25,396 [Worker-175] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for JSF_DEMO
 2017-06-26 12:52:25,402 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:39:52,347 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: io.altar.upacademy:JSF_DEMO:0.0.1-SNAPSHOT @ C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\pom.xml.
+2017-06-26 19:39:52,347 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: io.altar.upacademy:JSF_DEMO:0.0.1-SNAPSHOT @ C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\pom.xml.
+2017-06-26 19:39:57,670 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:39:57,670 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\main\resources
+2017-06-26 19:39:58,362 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:39:58,363 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\test\resources
+2017-06-26 19:39:58,368 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: io.altar.upacademy:JSF_DEMO:0.0.1-SNAPSHOT @ C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\pom.xml.
+2017-06-26 19:39:58,368 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of JSF_DEMO
+2017-06-26 19:39:58,369 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for JSF_DEMO
+2017-06-26 19:39:58,380 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:40:18,666 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:40:18,666 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\main\resources
+2017-06-26 19:40:18,668 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:40:18,669 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\test\resources
+2017-06-26 19:42:13,572 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-26 19:42:14,225 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: io.altar.upacademy:JSF_DEMO:0.0.1-SNAPSHOT @ C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\pom.xml.
+2017-06-26 19:42:14,955 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JSF_DEMO/src/main/java
+2017-06-26 19:42:14,956 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JSF_DEMO/src/test/java
+2017-06-26 19:42:16,119 [Worker-14] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for JSF_DEMO
+2017-06-26 19:42:16,128 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2017-06-26 19:42:17,133 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:42:17,134 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\main\resources
+2017-06-26 19:42:17,138 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:42:17,138 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\test\resources
+2017-06-26 19:42:17,139 [Worker-8] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of JSF_DEMO
+2017-06-26 19:42:17,139 [Worker-8] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for JSF_DEMO
+2017-06-26 19:42:17,146 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:37,701 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: io.altar.upacademy:JSF_DEMO:0.0.1-SNAPSHOT @ C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\pom.xml.
+2017-06-26 19:43:38,833 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:38,833 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\main\resources
+2017-06-26 19:43:38,836 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:38,836 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\test\resources
+2017-06-26 19:43:38,837 [Worker-25] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of JSF_DEMO
+2017-06-26 19:43:38,837 [Worker-25] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for JSF_DEMO
+2017-06-26 19:43:38,841 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:42,657 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:42,658 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\main\resources
+2017-06-26 19:43:42,661 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-26 19:43:42,662 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Andre\Desktop\ProjectJava\ProjectoJava\JSF_DEMO\src\test\resources
