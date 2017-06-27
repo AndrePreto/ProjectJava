@@ -3,15 +3,15 @@ package io.altar.view;
 import java.io.Serializable;
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
+
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import io.altar.model.Shelf;
 import io.altar.service.ShelfService;
 
-@ManagedBean(name="shelfView")
+@Named("shelfView")
 @RequestScoped
 public class ShelfView implements Serializable {
 
@@ -19,23 +19,37 @@ public class ShelfView implements Serializable {
 
 	@Inject
     private ShelfService shelfService;
-    
-    @PostConstruct
-    public void init() {
-    	shelfService.createShelves();
-    			
+	
+	private Shelf shelf = new Shelf();
+	
+    public void addShelf() {
+    	shelfService.createShelves(shelf);
     }
-     
+    
+    public Shelf getShelf() {
+		return shelf;
+	}
+
+	public void setShelf(Shelf shelf) {
+		this.shelf = shelf;
+	}
+    
     public Collection<Shelf> getShelves() {
         return shelfService.getShelves();
     }
-    
-    public ShelfService getShelfService() {
-        return shelfService;
-    }
- 
-    public void setShelfService(ShelfService shelfService) {
-        this.shelfService = shelfService;
-    }
-    
+//
+//	@PostConstruct
+//    public void init() {
+//    	shelfService.createShelves();
+//    			
+//    }
+//    
+//    public ShelfService getShelfService() {
+//        return shelfService;
+//    }
+// 
+//    public void setShelfService(ShelfService shelfService) {
+//        this.shelfService = shelfService;
+//    }
+//    
 }

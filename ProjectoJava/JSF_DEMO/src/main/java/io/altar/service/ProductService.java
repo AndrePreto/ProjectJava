@@ -12,11 +12,15 @@ import io.altar.repository.ProductRepository;
 @RequestScoped
 public class ProductService {
 	
-	private ProductRepository ProductList = new ProductRepository();
+	private ProductRepository ProductList = ProductRepository.getInstance();
 	
 	public void createProducts(Product product) {
 		
 		ProductList.PutOnListProduct(product);
+	}
+	
+	public void removeProducts(Product product){
+		ProductList.remove(product.getId());
 	}
 	
 	public Collection<Product> getProducts(){

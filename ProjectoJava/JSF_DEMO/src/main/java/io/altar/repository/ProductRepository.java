@@ -4,14 +4,14 @@ import io.altar.model.Product;
 
 public class ProductRepository extends EntityRepository <Product> {
 	
-//	private static final ProductRepository INSTANCE = new ProductRepository();
+	private static final ProductRepository INSTANCE = new ProductRepository();
 	//Mesmo antes de correr o programa o product repository já está criado
 	
 	public ProductRepository(){}
 	
-//	public static ProductRepository getInstance(){
-//		return INSTANCE;
-//	}
+	public static ProductRepository getInstance(){
+		return INSTANCE;
+	}
 	
 	public void editProduct (int Id, double discount, int tax, double salePrice){
 		

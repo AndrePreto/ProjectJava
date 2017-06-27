@@ -1,23 +1,20 @@
 package io.altar.model;
 
-import io.altar.repository.ShelfRepository;
-
 public class Shelf extends Entity{
 	
-	private int shelfId;
+	//private int shelfId;
 	//private int productID;
 	private int code;
 	private int capacity;
 	private double price;
-	private ShelfRepository shelfRepository = new ShelfRepository();
-	
-	public int getShelfId() {
-		return shelfId;
-	}
-	public void setShelfId(int shelfId) {
-		this.shelfId = shelfId;
-	}
-	
+//	
+//	public int getShelfId() {
+//		return shelfId;
+//	}
+//	public void setShelfId(int shelfId) {
+//		this.shelfId = shelfId;
+//	}
+//	
 //	public int getProductID(){
 //		return productID;
 //	}
@@ -43,13 +40,8 @@ public class Shelf extends Entity{
 		this.price = price;
 	}
 	
-	public Shelf(int shelfId,int code, int capacity, double price) {
-		this.shelfId = shelfId;
-		this.code = code;
-		this.capacity = capacity;
-		this.price = price;
-		shelfRepository.PutOnListShelf(this);
-		//ShelfRepository.Shelfs.put(shelfId, this);
+	public Shelf() {
+
 	}	
 	
 	@Override

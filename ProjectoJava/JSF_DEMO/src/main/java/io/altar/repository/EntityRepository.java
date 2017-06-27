@@ -18,7 +18,8 @@ public abstract class EntityRepository <E extends Entity> {
 	}
 		
 	public void PutOnListProduct(E Product){
-		Product.setId(productId);
+		Product.setId(productNextId());
+		System.out.println(Product);
 		Entities.put(Product.getId(), Product);
 	}
 	
@@ -29,7 +30,7 @@ public abstract class EntityRepository <E extends Entity> {
 	}
 		
 	public void PutOnListShelf(E Shelf){
-		Shelf.setId(shelfId);
+		Shelf.setId(shelfNextId());
 		Entities.put(Shelf.getId(), Shelf);
 	}
 	

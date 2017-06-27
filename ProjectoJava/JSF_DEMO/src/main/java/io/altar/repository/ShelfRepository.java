@@ -4,13 +4,13 @@ import io.altar.model.Shelf;
 
 public class ShelfRepository extends EntityRepository <Shelf> {
 	
-//	private static final ShelfRepository INSTANCE = new ShelfRepository();
+	private static final ShelfRepository INSTANCE = new ShelfRepository();
 	
 	public ShelfRepository(){}
 	
-//	public static ShelfRepository getInstance(){
-//		return INSTANCE;
-//	}
+	public static ShelfRepository getInstance(){
+		return INSTANCE;
+	}
 	
 	public void editShelf (int Id, int code, int capacity, double price){
 		

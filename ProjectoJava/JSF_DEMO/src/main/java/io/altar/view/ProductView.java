@@ -25,6 +25,10 @@ public class ProductView implements Serializable {
     	productService.createProducts(product);		
     }
     
+    public void removeProduct(){
+    	productService.removeProducts(product);
+    }
+    
 	public Product getProduct() {
 		return product;
 	}

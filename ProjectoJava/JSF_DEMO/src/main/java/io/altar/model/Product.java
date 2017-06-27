@@ -2,18 +2,18 @@ package io.altar.model;
 
 public class Product extends Entity{
 	
-	private int productId;
+	//private int productId;
 	//private ArrayList<Integer> shelfIdLocation;
 	private double discount;
 	private int tax;
 	private double salePrice;
 	
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+//	public int getProductId() {
+//		return productId;
+//	}
+//	public void setProductId(int productId) {
+//		this.productId = productId;
+//	}
 	
 //	public  ArrayList<Integer> getshelfIdlocation(){
 //		return  shelfIdLocation;	

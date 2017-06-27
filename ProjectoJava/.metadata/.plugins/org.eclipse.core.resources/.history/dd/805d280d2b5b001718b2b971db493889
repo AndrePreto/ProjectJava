@@ -1,0 +1,27 @@
+package io.altar.service;
+
+import java.util.Collection;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+
+import io.altar.model.Shelf;
+import io.altar.repository.ShelfRepository;
+
+@Named("shelfService")
+@RequestScoped
+public class ShelfService {
+		
+		private ShelfRepository ShelfList = ShelfRepository.getInstance();
+		
+		public void createShelves() {
+			ShelfList.PutOnListShelf(new Shelf(1,2,3,4));
+		}
+		
+		public Collection<Shelf> getShelves(){
+			return ShelfList.getall();
+		}
+
+}
