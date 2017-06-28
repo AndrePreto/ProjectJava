@@ -23,6 +23,10 @@ public class ProductService {
 		ProductList.remove(product.getId());
 	}
 	
+	public void editProducts(Product product){
+		ProductList.editProduct(product.getId(), product.getDiscount(), product.getTax(), product.getSalePrice());
+	}
+	
 	public Collection<Product> getProducts(){
 		return ProductList.getall();
 	}

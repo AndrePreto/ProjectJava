@@ -19,6 +19,10 @@ public class ShelfService {
 			ShelfList.PutOnListShelf(shelf);
 		}
 		
+		public void removeShelves(Shelf shelf){
+			ShelfList.remove(shelf.getId());
+		}
+		
 		public Collection<Shelf> getShelves(){
 			return ShelfList.getall();
 		}

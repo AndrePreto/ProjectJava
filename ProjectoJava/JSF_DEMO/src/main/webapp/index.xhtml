@@ -10,23 +10,92 @@
 		<ui:composition template="CommonLayout.xhtml">
 			<ui:define name="Index">
 				<h:form>
-		    		<p:growl id="messages"/>
-		    		<p:menubar>
-		        		<p:submenu label="Products">
-		            		<p:menuitem value="Create New Product" url="#" />
-		            		<p:menuitem value="Edit Product" url="#" />
-		            		<p:menuitem value="Delete Product" url="#" />
-		        		</p:submenu>
-		        		<p:submenu label="Shelves">
-		            		<p:menuitem value="Create New Shelf" url="#" />
-		            		<p:menuitem value="Edit Shelf" url="#" />
-		            		<p:menuitem value="Delete Shelf" url="#" />
-		        		</p:submenu>
-		   	 		</p:menubar>
+					<p:tabView>
+					
+						<p:tab title=" Create Products">
+							<div style = "text-align:center">
+						   	 	
+								<p style = "text-align:center">Insert product details</p>
+		  								
+									<h:panelGrid columns="2" style = "text-align:center ; margin:auto">
+								
+										<h:outputText value="Discount: "/>
+										<p:inputText value="#{productView.product.discount}" required="true"/>
+										<h:outputText value="IVA: "/>
+										<p:inputText value="#{productView.product.tax}" required="true"/>
+										<h:outputText value="Price: "/>
+										<p:inputText value="#{productView.product.salePrice}" required="true"/>
+										<br />
+						
+									</h:panelGrid>
+												
+										<h:commandButton value="Create Product" action="#{productView.addProduct}" />
+		
+							</div>
+						</p:tab>
+						
+						<p:tab title=" Create Shelves">
+						   	 	<div style = "text-align:center">
+						   	 	
+							   	 	<p style = "text-align:center">Insert shelf details</p>
+							   	 	
+							   	 	<h:panelGrid columns="2" style = "text-align:center ; margin:auto">
+								
+										<h:outputText value="Code: "/>
+										<p:inputText value="#{shelfView.shelf.code}" required="true"/>
+										<h:outputText value="Capacity: "/>
+										<p:inputText value="#{shelfView.shelf.capacity}" required="true"/>
+										<h:outputText value="Price: "/>
+										<p:inputText value="#{shelfView.shelf.price}" required="true"/>
+										<br />
+						
+									</h:panelGrid>
+												
+										<h:commandButton value="Create Shelf" action="#{shelfView.addShelf}" />
+								</div>					
+						</p:tab>
+						
+						<p:tab title=" Remove Products">
+							<div style = "text-align:center">
+						   	 	
+								<p style = "text-align:center">Insert product Id to remove</p>
+		  								
+									<h:panelGrid columns="2" style = "text-align:center ; margin:auto">
+								
+										<h:outputText value="Id: "/>
+										<p:inputText value="#{productView.product.id}" required="true"/>
+										<br />
+						
+									</h:panelGrid>
+												
+										<h:commandButton value="Remove Product" action="#{productView.removeProduct}" />
+			
+							</div>
+						</p:tab>
+						
+						<p:tab title=" Remove Shelves">
+							<div style = "text-align:center">
+						   	 	
+								<p style = "text-align:center">Insert shelf Id to remove</p>
+		  								
+									<h:panelGrid columns="2" style = "text-align:center ; margin:auto">
+								
+										<h:outputText value="Id: "/>
+										<p:inputText value="#{shelfView.shelf.id}" required="true"/>
+										<br />
+						
+									</h:panelGrid>
+												
+										<h:commandButton value="Remove Shelf" action="#{shelfView.removeShelf}" />
+							</div>
+						</p:tab>
+						
+					</p:tabView>
 		   	 	</h:form>
 		   	 	<h:form>
 		   	 		<p:tabView>
 		   	 			<p:tab title="Products">
+		   	 			
 					   	 	<p:dataTable var="Product" value="#{productView.products}" rowKey="#{Product.id}">
 					   	 		<p:column headerText="Id">
 					   	 			<h:outputText value="#{Product.id}"/>
@@ -41,24 +110,8 @@
 					   	 			<h:outputText value="#{Product.salePrice}"/>
 					   	 		</p:column>
 					   	 	</p:dataTable>
-					   	 	
-					   	 	<p style = "text-align:center">Insert product details</p>
-  								
-							<h:panelGrid columns="2" style = "text-align:center">
-						
-								<h:outputText value="Discount: "/>
-								<p:inputText value="#{productView.product.discount}" required="true"/>
-								<h:outputText value="IVA: "/>
-								<p:inputText value="#{productView.product.tax}" required="true"/>
-								<h:outputText value="Price: "/>
-								<p:inputText value="#{productView.product.salePrice}" required="true"/>
-								<br />
-				
-							</h:panelGrid>
-										
-								<h:commandButton value="Save" action="#{productView.addProduct}" />
-								<h:commandButton value="Cancel" />
-					   	 </p:tab>
+								
+					   	</p:tab>
 					   	 
 				   	 	<p:tab title="Shelves">
 					   	 	<p:dataTable var="Shelf" value="#{shelfView.shelves}" rowKey="#{Shelf.id}">
@@ -75,23 +128,6 @@
 					   	 			<h:outputText value="#{Shelf.price}"/>
 					   	 		</p:column>
 					   	 	</p:dataTable>
-					   	 	
-					   	 	<p style = "text-align:center">Insert shelf details</p>
-					   	 	
-					   	 	<h:panelGrid columns="2" style = "text-align:center">
-						
-								<h:outputText value="Code: "/>
-								<p:inputText value="#{shelfView.shelf.code}" required="true"/>
-								<h:outputText value="Capacity: "/>
-								<p:inputText value="#{shelfView.shelf.capacity}" required="true"/>
-								<h:outputText value="Price: "/>
-								<p:inputText value="#{shelfView.shelf.price}" required="true"/>
-								<br />
-				
-							</h:panelGrid>
-										
-								<h:commandButton value="Save" action="#{shelfView.addShelf}" />
-								<h:commandButton value="Cancel" />
 								
 					   	 </p:tab>
 				   	 </p:tabView>

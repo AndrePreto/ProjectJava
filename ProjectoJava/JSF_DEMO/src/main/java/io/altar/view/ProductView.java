@@ -18,9 +18,22 @@ public class ProductView implements Serializable {
 
 	@Inject
     private ProductService productService;
+	
+	//Variável do tipo product---------------------
 
 	private Product product = new Product();
+	
+	// Getter e setters da variável do tipo product
+	public Product getProduct() {
+		return product;
+	}
 
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	//---------------------------------------------
+	
+	
     public void addProduct() {
     	productService.createProducts(product);		
     }
@@ -29,13 +42,10 @@ public class ProductView implements Serializable {
     	productService.removeProducts(product);
     }
     
-	public Product getProduct() {
-		return product;
-	}
+//    public void editProduct(){
+//    	productService.editProducts(product);
+//    }
 
-	public void setProduct(Product product) {
-		this.product = product;
-	}
 //    
 //     public ProductService getProductService() {
 //        return productService;

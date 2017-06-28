@@ -22,17 +22,21 @@ public class ShelfView implements Serializable {
 	
 	private Shelf shelf = new Shelf();
 	
-    public void addShelf() {
-    	shelfService.createShelves(shelf);
-    }
-    
     public Shelf getShelf() {
 		return shelf;
 	}
 
 	public void setShelf(Shelf shelf) {
 		this.shelf = shelf;
-	}
+	}	
+	
+    public void addShelf() {
+    	shelfService.createShelves(shelf);
+    }
+    
+    public void removeShelf(){
+    	shelfService.removeShelves(shelf);
+    }
     
     public Collection<Shelf> getShelves() {
         return shelfService.getShelves();
