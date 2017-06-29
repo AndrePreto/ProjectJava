@@ -38,6 +38,10 @@ public class ShelfView implements Serializable {
     	shelfService.removeShelves(shelf);
     }
     
+    public void editShelf(){
+    	shelfService.editShelves(shelf);
+    }
+    
     public Collection<Shelf> getShelves() {
         return shelfService.getShelves();
     }

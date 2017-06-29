@@ -42,9 +42,9 @@ public class ProductView implements Serializable {
     	productService.removeProducts(product);
     }
     
-//    public void editProduct(){
-//    	productService.editProducts(product);
-//    }
+    public void editProduct(){
+    	productService.editProducts(product);
+    }
 
 //    
 //     public ProductService getProductService() {

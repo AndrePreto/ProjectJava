@@ -30,4 +30,5 @@ public class ProductService {
 	public Collection<Product> getProducts(){
 		return ProductList.getall();
 	}
+
 }
