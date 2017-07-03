@@ -22,7 +22,12 @@
 										<h:outputText value="Discount: "/>
 										<p:inputText value="#{productView.product.discount}" required="true"/>
 										<h:outputText value="IVA: "/>
-										<p:inputText value="#{productView.product.tax}" required="true"/>
+										<p:selectOneRadio value="#{productView.product.tax}">
+											<f:selectItem itemLabel="6" itemValue="6" />
+											<p></p>
+											<f:selectItem itemLabel="13" itemValue="13" />
+											<f:selectItem itemLabel="23" itemValue="23" />
+										</p:selectOneRadio>
 										<h:outputText value="Price: "/>
 										<p:inputText value="#{productView.product.salePrice}" required="true"/>
 										<br />
@@ -102,7 +107,12 @@
 										<h:outputText value="Discount: "/>
 										<p:inputText value="#{productView.product.discount}" required="true"/>
 										<h:outputText value="IVA: "/>
-										<p:inputText value="#{productView.product.tax}" required="true"/>
+										<p:selectOneRadio value="#{productView.product.tax}">
+											<f:selectItem itemLabel="6" itemValue="6" />
+											<p></p>
+											<f:selectItem itemLabel="13" itemValue="13" />
+											<f:selectItem itemLabel="23" itemValue="23" />
+										</p:selectOneRadio>
 										<h:outputText value="Price: "/>
 										<p:inputText value="#{productView.product.salePrice}" required="true"/>
 										<br />

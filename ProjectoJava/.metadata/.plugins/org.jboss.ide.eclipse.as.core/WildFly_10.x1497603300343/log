@@ -320,3 +320,13 @@ org.eclipse.core.runtime.AssertionFailedException: assertion failed: The applica
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-06-30 09:38:01.879
 !MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-07-03 10:11:13.225
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-07-03 10:11:30.279
+!MESSAGE Module JSF_DEMO on WildFly 10.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-07-03 10:11:30.396
+!MESSAGE Server Startup Succeeded

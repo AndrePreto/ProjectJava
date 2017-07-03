@@ -1,7 +1,7 @@
 package io.altar.model;
 
 public class Product extends Entity{
-	
+
 	//private int productId;
 	//private ArrayList<Integer> shelfIdLocation;
 	private double discount;
