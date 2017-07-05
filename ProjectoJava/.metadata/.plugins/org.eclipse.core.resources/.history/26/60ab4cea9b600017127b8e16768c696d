@@ -1,6 +1,6 @@
 package io.altar.model;
 
-public class Product extends EntityModel{
+public class Product extends Entity{
 
 	//private int productId;
 	//private ArrayList<Integer> shelfIdLocation;

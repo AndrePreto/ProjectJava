@@ -4,8 +4,6 @@
 	<persistence-unit name="database" transaction-type="JTA">
 		<description>Repositories for entities</description>
 		<jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
-		<class>io.altar.model.Product</class>
-		<class>io.altar.model.Shelf</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
