@@ -1,0 +1,20 @@
+package io.altar.model;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class EntityModel{
+	@Id
+	@GeneratedValue()
+	private int Id;
+	
+	public int getId() {
+		return Id;
+	}
+	
+	public void setId(int Id) {
+		this.Id = Id;
+	}
+	
+	public EntityModel() {}
+}
