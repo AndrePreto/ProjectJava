@@ -2,16 +2,25 @@ package io.altar.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
+@Table(name="PRODUCTS")
 public class Product extends EntityModel implements Serializable{
 
+
+	private static final long serialVersionUID = 1L;
+	
+	
 	//private int productId;
 	//private ArrayList<Integer> shelfIdLocation;
+	@Column(name="Desconto")
 	private double discount;
+	@Column(name="IVA")
 	private int tax;
+	@Column(name="Preço")
 	private double salePrice;
 	
 //	public int getProductId() {

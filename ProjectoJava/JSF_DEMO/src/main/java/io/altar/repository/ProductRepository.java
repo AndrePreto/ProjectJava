@@ -1,9 +1,40 @@
 package io.altar.repository;
 
+import java.util.List;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
 import io.altar.model.Product;
 
+@Named("productRepository")
+@RequestScoped
 public class ProductRepository extends EntityRepository <Product> {
 	
+	public List<Product> getAllProducts(){
+		Query query = getDataBase().createQuery("FROM Product");
+		List<Product> ProductList = (List<Product>)query.getResultList();
+		return ProductList;
+	}
+	
+	@Override
+	@Transactional
+	public void RemoveFromDataBase (Product product){
+		Product removedProduct = getDataBase().find(Product.class, product.getId());
+		getDataBase().remove(removedProduct);
+	}
+	
+	@Transactional
+	public void Edit(int id, double discount, int tax, double salePrice){
+		Product editedProduct = getDataBase().find(Product.class, id);
+		editedProduct.setDiscount(discount);
+		editedProduct.setTax(tax);
+		editedProduct.setSalePrice(salePrice);
+	}
+	
+	/*
 	private static final ProductRepository INSTANCE = new ProductRepository();
 	//Mesmo antes de correr o programa o product repository já está criado
 	
@@ -37,6 +68,9 @@ public class ProductRepository extends EntityRepository <Product> {
 		((Product) get(Id)).setSalePrice(salePrice);
 
 	}
+	*/
+	
+	
 	
 	/*
 	//Com arrayList

@@ -16,7 +16,7 @@ public class ProductService {
 	
 	public void createProducts(Product product) {
 		
-		ProductList.PutOnListProduct(product);
+		ProductList.PutOnList(product);
 	}
 	
 	public void removeProducts(Product product){
